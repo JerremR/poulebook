@@ -80,6 +80,5 @@ test:
 #
 production:
   <<: *default
-  database: poulebook_production
-  username: poulebook
-  password: <%= ENV['POULEBOOK_DATABASE_PASSWORD'] %>
+  url: <%= ENV['POSTGRESQL_ADDON_URI'] %>
+
