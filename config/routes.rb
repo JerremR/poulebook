@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   namespace :owner do
     resources :chickens, only:[:index, :new, :create]
-    ressources :bookings, only:[:index]
+    resources :bookings, only:[:index]
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
