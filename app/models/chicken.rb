@@ -4,4 +4,7 @@ class Chicken < ApplicationRecord
 
   validates :name, presence: true
   validates :price, presence: true
+  validates :gender, inclusion: { in: ['male', 'female'] }
+
+  mount_uploader :photo, PhotoUploader
 end
