@@ -3,12 +3,13 @@ class ChickensController < ApplicationController
     @chickens = Chicken.all
   end
 
+  def show
+    @chicken = Chicken.find(params[:id])
+  end
+
   def create
   end
 
   def new
-  end
-
-  def show
   end
 end

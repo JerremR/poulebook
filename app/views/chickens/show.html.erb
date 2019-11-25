@@ -1,2 +1,17 @@
-<h1>Chickens#show</h1>
-<p>Find me in app/views/chickens/show.html.erb</p>
+<h1><%= @chicken.name %></h1>
+<div class="row">
+<div class="col-3">
+  <%= cl_image_tag(@chicken.owner.avatar, class:'card-trip-user avatar-bordered') %>
+</div>
+<div class="col-9">
+  Owner: <%= @chicken.owner.fullname %></p>
+</div>
+</div>
+<p>BirthDate: <%= @chicken.birthdate %></p>
+<p>Color: <%= @chicken.color %></p>
+<p>Species: <%= @chicken.species %></p>
+<p>Gender: <%= @chicken.gender %></p>
+<p>Price: <%= @chicken.price %> € per day</p>
+<p>Photo: <%= cl_image_tag(@chicken.photo) %></p>
+<p>Presentation: <%= @chicken.presentation %></p>
+<p>Address: <%= @chicken.address %></p>

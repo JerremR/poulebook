@@ -5,7 +5,7 @@
   <div class="row">
   <% @chickens.each do |chicken| %>
     <div class="col">
-      <h2><%= chicken.name %></h2>
+      <h2><%= link_to chicken.name, chicken_path(chicken) %></h2>
       <div class="row">
         <div class="col-3">
           <%= cl_image_tag(chicken.owner.avatar, class:'card-trip-user avatar-bordered') %>
