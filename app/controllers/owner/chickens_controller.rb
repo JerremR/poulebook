@@ -16,6 +16,11 @@ module Owner
       else
         render :new
       end
+
+    end
+
+    def show
+      raise
     end
 
     private
