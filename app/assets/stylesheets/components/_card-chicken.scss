@@ -1,13 +1,9 @@
-.container-chicken {
-  display:flex;
-  justify-content: space-evenly;
-}
-
 .card-chicken {
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   max-width: 100%;
+  margin: 5px;
   margin-top: 20px;
 }
 
