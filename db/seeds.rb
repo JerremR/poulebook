@@ -107,7 +107,7 @@ nathan = Chicken.new(
   gender: 'male',
   price: 8.2,
   presentation: 'Facilis cu, aperiam vel quod omnis illum laborum offici est.',
-  address: 'Perpignan'
+  address: 'Los Angeles'
   )
 nathan_photo_url = 'http://image.blingee.com/images19/content/output/000/000/000/7c8/805410520_1672801.gif'
 nathan.remote_photo_url = nathan_photo_url
