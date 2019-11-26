@@ -6,13 +6,13 @@ module Owner
 
     def new
       @chicken = Chicken.new
-      @chicken.owner = current_user
     end
 
     def create
       @chicken = Chicken.new(chicken_params)
+      @chicken.owner = current_user
       if @chicken.save
-        redirect_to owner_chicken_path
+        redirect_to owner_chickens_path
       else
         render :new
       end
