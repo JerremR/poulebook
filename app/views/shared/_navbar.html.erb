@@ -20,8 +20,8 @@
             <%= cl_image_tag(current_user.avatar, width: 40, height: 40, crop: :thumb, gravity: :face, class:'avatar dropdown-toggle', id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false) %>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
               <%= link_to "My bookings", bookings_path, class: "dropdown-item" %>
-              <%= link_to "My chickens", "#", class: "dropdown-item" %>
-              <%= link_to "My chicken bookings", "#", class: "dropdown-item" %>
+              <%= link_to "My chickens", owner_chickens_path, class: "dropdown-item" %>
+              <%= link_to "My chicken bookings", owner_bookings_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
           </li>
