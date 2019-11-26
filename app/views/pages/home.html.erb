@@ -12,14 +12,24 @@
     <% end %>
   </div>
 </div>
-<div class="container card-container">
-  <% 4.times do %>
-    <div class="card-product last-chicken-card">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-      <div class="card-product-infos last-chicken-card-infos">
-        <h2>Chicken name</h2>
-        <p>Product description with <strong>relevant info</strong> only.</p>
+<h2 class="h2-home-page">Poule Position 🏆</h2>
+<div class="container container-chicken">
+  <% last_chickens = Chicken.all %>
+  <div class="row">
+    <% last_chickens.each do |chicken| %>
+      <div class="card-chicken col-3 nopadding">
+        <%= cl_image_tag(chicken.photo)%>
+        <!-- <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" /> -->
+        <div class="card-chicken-infos">
+          <div>
+            <h2><%= chicken.name %></h2>
+            <p><%= chicken.address %></p>
+          </div>
+          <h2 class="card-chicken-pricing"><%= chicken.price %>€/day</h2>
+          <%= cl_image_tag(chicken.owner.avatar, class:"card-chicken-owner avatar-bordered", width: 40, height: 40, crop: :thumb, gravity: :face) %>
+          <!-- <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-chicken-owner avatar-bordered" /> -->
+        </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
