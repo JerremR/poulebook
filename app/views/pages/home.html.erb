@@ -12,12 +12,13 @@
     <% end %>
   </div>
 </div>
+<h2 id="poule-position">Poule Position 🏆</h2>
 <div class="container container-chicken">
-  <div class="row justify-content-between">
-    <% last_chickens = Chicken.all %>
+  <% last_chickens = Chicken.all %>
+  <div class="row">
     <% last_chickens.each do |chicken| %>
-      <div class="card-chicken">
-        <%= cl_image_tag(chicken.photo) %>
+      <div class="card-chicken col-3 nopadding">
+        <%= cl_image_tag(chicken.photo)%>
         <!-- <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" /> -->
         <div class="card-chicken-infos">
           <div>
