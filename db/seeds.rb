@@ -1,6 +1,3 @@
-# require 'json'
-# require 'open-uri'
-
 puts 'Start seeds'
 
 Booking.destroy_all
@@ -144,7 +141,7 @@ pierreT = Chicken.new(
   )
 pierreT_photo_url = 'http://knowledgebase.lookseek.com/images/animals/birds/poultry/large-poultry/White-Leghorns-Chicken.JPG'
 pierreT.remote_photo_url = pierreT_photo_url
-pierreT.owner = brandon
+pierreT.owner = katarina
 pierreT.save!
 
 hugo = Chicken.new(
@@ -159,7 +156,7 @@ hugo = Chicken.new(
   )
 hugo_photo_url = 'https://i.pinimg.com/originals/ca/81/0d/ca810d5550d09379a100e4e645826da1.jpg'
 hugo.remote_photo_url = hugo_photo_url
-hugo.owner = brandon
+hugo.owner = katarina
 hugo.save!
 
 julien = Chicken.new(
@@ -174,7 +171,7 @@ julien = Chicken.new(
   )
 julien_photo_url = 'https://www.papercards.com/images/avanti/AV-202346-hen-wears-swimsuit-gift-enclosure-card.jpg'
 julien.remote_photo_url = julien_photo_url
-julien.owner = brandon
+julien.owner = katarina
 julien.save!
 
 
@@ -190,7 +187,7 @@ melanie = Chicken.new(
   )
 melanie_photo_url = 'https://upload.wikimedia.org/wikipedia/commons/d/dd/Poule_Soie_bleue.png'
 melanie.remote_photo_url = melanie_photo_url
-melanie.owner = brandon
+melanie.owner = katarina
 melanie.save!
 
 
@@ -199,14 +196,61 @@ puts 'End chickens'
 
 puts '-> Start bookings'
 
-booking = Booking.new(
-  status: 'pending',
+booking1 = Booking.new(
+  status: 'rejected',
   start_date: Date.strptime("28/12/2019", "%d/%m/%Y"),
   end_date: Date.strptime("01/01/2020", "%d/%m/%Y"),
   total_price: 19.6)
-booking.user = igor
-booking.chicken = pierre
-booking.save!
+booking1.user = igor
+booking1.chicken = pierre
+booking1.save!
+
+booking2 = Booking.new(
+  status: 'pending',
+  start_date: Date.strptime("02/02/2020", "%d/%m/%Y"),
+  end_date: Date.strptime("01/03/2020", "%d/%m/%Y"),
+  total_price: 152.6)
+booking2.user = igor
+booking2.chicken = pierre
+booking2.save!
+
+booking3 = Booking.new(
+  status: 'confirmed',
+  start_date: Date.strptime("24/12/2019", "%d/%m/%Y"),
+  end_date: Date.strptime("25/12/2019", "%d/%m/%Y"),
+  total_price: 45.2)
+booking3.user = igor
+booking3.chicken = melanie
+booking3.save!
+
+booking4 = Booking.new(
+  status: 'pending',
+  start_date: Date.strptime("24/12/2019", "%d/%m/%Y"),
+  end_date: Date.strptime("25/12/2019", "%d/%m/%Y"),
+  total_price: 8.6)
+booking4.user = katarina
+booking4.chicken = thibault
+booking4.save!
+
+booking5 = Booking.new(
+  status: 'pending',
+  start_date: Date.strptime("24/12/2019", "%d/%m/%Y"),
+  end_date: Date.strptime("25/12/2019", "%d/%m/%Y"),
+  total_price: 8.6)
+booking5.user = brandon
+booking5.chicken = nicoF
+booking5.save!
+
+booking6 = Booking.new(
+  status: 'pending',
+  start_date: Date.strptime("24/12/2019", "%d/%m/%Y"),
+  end_date: Date.strptime("25/12/2019", "%d/%m/%Y"),
+  total_price: 8.6)
+booking6.user = igor
+booking6.chicken = guillaume
+booking6.save!
+
+
 
 puts "#{Booking.count} bookings imported."
 puts 'End booking'
