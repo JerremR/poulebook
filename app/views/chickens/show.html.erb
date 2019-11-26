@@ -1,12 +1,48 @@
+<div class="box">
+  <div class="one">
+    <div class="card">
+      <h1 class="card-header"><%= @chicken.name %> - <%= @chicken.species %></h1>
+        <div class="card-body">
+          <h2 class="card-title">Color: <%= @chicken.color %></h2>
+          <p class="card-text"><%= @chicken.presentation %></p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>
+  </div>
+  <div class="two">
+    <%= cl_image_tag(@chicken.photo) %>
+  </div>
+</div>
+
+<div class="box">
+  <div class="one">three</div>
+  <div class="two">four</div>
+</div>
+
+
+<!--   <div class="card">
+    <h1 class="card-header"><%= @chicken.name %> - <%= @chicken.species %></h1>
+    <div class="card-body">
+      <h2 class="card-title">Color: <%= @chicken.color %></h2>
+      <p class="card-text"><%= @chicken.presentation %></p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div> -->
+<!-- </div>
+</div>
+
+<div class="two">
+  <p><%= cl_image_tag(@chicken.photo) %></p>
+</div>
+ -->
+<!--
 <div class="container">
   <h1><%= @chicken.name %></h1>
   <p>BirthDate: <%= @chicken.birthdate %></p>
   <p>Color: <%= @chicken.color %></p>
-  <p>Species: <%= @chicken.species %></p>
-  <p>Gender: <%= @chicken.gender %></p>
+    <p>Gender: <%= @chicken.gender %></p>
   <p>Price: <%= @chicken.price %> € per day</p>
-  <p>Photo: <%= cl_image_tag(@chicken.photo) %></p>
-  <p>Presentation: <%= @chicken.presentation %></p>
+  <p>Presentation: </p>
   <p>Address: <%= @chicken.address %></p>
   <div class="row">
     <div class="col-3">
@@ -16,4 +52,5 @@
       Owner: <%= @chicken.owner.fullname %></p>
     </div>
   </div>
-</div>
+</div> -->
+<!-- </div> -->

@@ -1,0 +1,30 @@
+.box {
+  display: flex;
+  width: 100%;
+
+  .card {
+    height: 300px;
+
+  }
+
+  .one {
+    flex-grow: 1;
+  }
+}
+
+
+.two {
+  // position: relative;
+  // display: block;
+  // width: 30%;
+  // height: auto;
+  // object-fit: contain;
+}
+
+.two > img {
+  border: 3px;
+  display: block;
+  height: 300px;
+  object-fit: scale-down;
+
+}
