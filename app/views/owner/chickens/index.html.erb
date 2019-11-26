@@ -1,6 +1,9 @@
 <div class="container">
-  <h1>All my chickens</h1>
-  <% if @chickens.empty? %>
+  <div class="d-flex justify-content-between">
+    <h1>All my chickens</h1>
+    <%= link_to "Ajoute ta poule", new_owner_chicken_path, class: "btn btn-primary" %>
+  </div>
+    <% if @chickens.empty? %>
     <p>No chicken created for now</p>
   <% else %>
     <div class="row">
