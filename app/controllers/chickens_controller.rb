@@ -6,10 +6,4 @@ class ChickensController < ApplicationController
   def show
     @chicken = Chicken.find(params[:id])
   end
-
-  def create
-  end
-
-  def new
-  end
 end
