@@ -20,10 +20,13 @@
     </div>
     <div class="col col-md-4">
       <p><%= @chicken.price %>€/day</p>
-      <%= simple_form_for @booking do |f| %>
+      <%= simple_form_for(@booking, as: :booking, method: :post, url: chicken_bookings_path) do |f| %>
+        <% if @booking.errors.any? %>
+          <%= @booking.errors[:chicken].first  %>
+        <% end %>
         <div class=" form-inputs d-flex justify-content-between">
-          <%= f.input :start_date, as: :string, input_html: {type: :date} %>
-          <%= f.input :end_date, as: :string, input_html: {type: :date} %>
+          <%= f.input :start_date, required: true, as: :string, input_html: {type: :date} %>
+          <%= f.input :end_date, required: true, as: :string, input_html: {type: :date} %>
         </div>
         <div class="form-actions">
           <%= f.button :submit, "Book ta poule", class: "btn button-primary" %>

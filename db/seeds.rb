@@ -133,13 +133,13 @@ pierreT = Chicken.new(
   name: 'Pierre T',
   birthdate: Date.strptime("15/09/1985", "%d/%m/%Y"),
   color: 'Red',
-  species: 'White-Leghorns',
+  species: 'Punk-Leghorns',
   gender: 'male',
   price: 5.6,
   presentation: 'Facilis cu, aperiam vel quod omnis illum laborum offici est.',
   address: 'Paris'
   )
-pierreT_photo_url = 'http://knowledgebase.lookseek.com/images/animals/birds/poultry/large-poultry/White-Leghorns-Chicken.JPG'
+pierreT_photo_url = 'https://i.servimg.com/u/f46/11/46/89/73/pict0310.jpg'
 pierreT.remote_photo_url = pierreT_photo_url
 pierreT.owner = katarina
 pierreT.save!
