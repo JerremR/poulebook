@@ -4,7 +4,8 @@
     <%= link_to "Ajoute ta poule", new_owner_chicken_path, class: "btn button-primary" %>
   </div>
     <% if @chickens.empty? %>
-    <p>No chicken created for now</p>
+    <p class="text-center">No chicken created for now</p>
+    <p class="text-center mt-5 mb-5"><%= image_tag "nochickenyet.gif" %></p>
   <% else %>
     <div class="row">
     <% @chickens.each do |chicken| %>
