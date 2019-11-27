@@ -6,7 +6,7 @@
         <div class="card-body">
           <h2 class="card-title">Couleur: <%= @chicken.color %></h2>
           <p class="card-text"><%= @chicken.presentation %></p>
-          <span><%= link_to "Réserve ta poule", bookings_path, class: "btn button-primary" %></span>
+          <span><%= link_to "Réserve ta poule", new_chicken_booking_path(@chicken), class: "btn button-primary" %></span>
         </div>
     </div>
   </div>
