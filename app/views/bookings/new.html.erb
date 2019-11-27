@@ -22,7 +22,7 @@
       <p><%= @chicken.price %>€/day</p>
       <%= simple_form_for(@booking, as: :booking, method: :post, url: chicken_bookings_path) do |f| %>
         <% if @booking.errors.any? %>
-          <%= @booking.errors[:chicken].first  %>
+          <p class="text-danger"><%= @booking.errors[:chicken].first  %></p>
         <% end %>
         <div class=" form-inputs d-flex justify-content-between">
           <%= f.input :start_date, required: true, as: :string, input_html: {type: :date} %>
