@@ -197,7 +197,6 @@ puts 'End chickens'
 puts '-> Start bookings'
 
 booking1 = Booking.new(
-  status: 'rejected',
   start_date: Date.strptime("28/12/2019", "%d/%m/%Y"),
   end_date: Date.strptime("01/01/2020", "%d/%m/%Y"),
   total_price: 19.6)
@@ -206,7 +205,6 @@ booking1.chicken = pierre
 booking1.save!
 
 booking2 = Booking.new(
-  status: 'pending',
   start_date: Date.strptime("02/02/2020", "%d/%m/%Y"),
   end_date: Date.strptime("01/03/2020", "%d/%m/%Y"),
   total_price: 152.6)
@@ -215,7 +213,6 @@ booking2.chicken = pierre
 booking2.save!
 
 booking3 = Booking.new(
-  status: 'confirmed',
   start_date: Date.strptime("24/12/2019", "%d/%m/%Y"),
   end_date: Date.strptime("25/12/2019", "%d/%m/%Y"),
   total_price: 45.2)
@@ -224,7 +221,6 @@ booking3.chicken = melanie
 booking3.save!
 
 booking4 = Booking.new(
-  status: 'pending',
   start_date: Date.strptime("24/12/2019", "%d/%m/%Y"),
   end_date: Date.strptime("25/12/2019", "%d/%m/%Y"),
   total_price: 8.6)
@@ -233,7 +229,6 @@ booking4.chicken = thibault
 booking4.save!
 
 booking5 = Booking.new(
-  status: 'pending',
   start_date: Date.strptime("24/12/2019", "%d/%m/%Y"),
   end_date: Date.strptime("25/12/2019", "%d/%m/%Y"),
   total_price: 8.6)
@@ -242,7 +237,6 @@ booking5.chicken = nicoF
 booking5.save!
 
 booking6 = Booking.new(
-  status: 'pending',
   start_date: Date.strptime("24/12/2019", "%d/%m/%Y"),
   end_date: Date.strptime("25/12/2019", "%d/%m/%Y"),
   total_price: 8.6)
