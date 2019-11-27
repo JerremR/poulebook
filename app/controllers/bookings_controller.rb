@@ -35,28 +35,36 @@ class BookingsController < ApplicationController
   private
 
   def chicken_available?(chicken, start_date, end_date)
-    bookings = chicken.bookings.where("status = 'En attente' OR  status = 'Confirmé'")
-    booking_days = []
-    bookings.each do |book|
-      book_days = (book.start_date..book.end_date).map(&:to_s)
-      book_days.each do |day|
-        booking_days << day
+    if start_date && end_date
+      bookings = chicken.bookings.where("status = 'En attente' OR  status = 'Confirmé'")
+      booking_days = []
+      bookings.each do |book|
+        book_days = (book.start_date..book.end_date).map(&:to_s)
+        book_days.each do |day|
+          booking_days << day
+        end
       end
-    end
-    uniq_booking_days = booking_days.uniq
+      uniq_booking_days = booking_days.uniq
 
-    booking_request_days = []
-    request_book_days = (start_date..end_date).map(&:to_s)
-    request_book_days.each do |day|
-      booking_request_days << day
-    end
+      booking_request_days = []
+      request_book_days = (start_date..end_date).map(&:to_s)
+      request_book_days.each do |day|
+        booking_request_days << day
+      end
 
-    (uniq_booking_days & booking_request_days).empty?
+      (uniq_booking_days & booking_request_days).empty?
+    else
+      return false
+    end
   end
 
   def calculate_total_price(day_price, start_date, end_date)
-    total_price = day_price * (end_date - start_date)
-    total_price.round(2)
+    if start_date && end_date
+      total_price = day_price * (end_date - start_date)
+      total_price.round(2)
+    else
+      return 0
+    end
   end
 
   def booking_params
