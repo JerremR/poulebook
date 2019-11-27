@@ -1,11 +1,11 @@
 <div class="container">
-  <h1>Book ta poule now !</h1>
+  <h1 class="mb-5">Book ta poule now !</h1>
   <div class="row">
     <div class="col col-md-4">
       <p><%= cl_image_tag(@chicken.photo, class: 'w-100') %></p>
       <div class="d-flex align-items-center">
         <p><%= cl_image_tag(@chicken.owner.avatar, class:"card-chicken-owner avatar-bordered mr-3", width: 40, height: 40, crop: :thumb, gravity: :face) %>
-        <p><%= @chicken.owner.fullname %> (<%= @chicken.owner.owner_bookings.count %> reservations)</p>
+        <p><%= @chicken.owner.fullname %> (<%= @chicken.owner.owner_bookings.count %>&nbsp;reservations)</p>
 
       </div>
     </div>
