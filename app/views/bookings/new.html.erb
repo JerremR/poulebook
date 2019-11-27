@@ -1,0 +1,48 @@
+<div class="container">
+  <h1 class="mb-5">Book ta poule now !</h1>
+  <div class="row">
+    <div class="col col-md-4">
+      <p><%= cl_image_tag(@chicken.photo, class: 'w-100') %></p>
+      <div class="d-flex align-items-center">
+        <p><%= cl_image_tag(@chicken.owner.avatar, class:"card-chicken-owner avatar-bordered mr-3", width: 40, height: 40, crop: :thumb, gravity: :face) %>
+        <p><%= @chicken.owner.fullname %> (<%= @chicken.owner.owner_bookings.count %>&nbsp;reservations)</p>
+
+      </div>
+    </div>
+    <div class="col col-md-4">
+      <h2><%= @chicken.name %></h2>
+      <p><%= @chicken.gender %></p>
+      <p><%= @chicken.color %></p>
+      <p><%= @chicken.birthdate %></p>
+      <p><%= @chicken.species %></p>
+      <p><%= @chicken.presentation %></p>
+      <p><%= @chicken.address %></p>
+    </div>
+    <div class="col col-md-4">
+      <p><%= @chicken.price %>€/day</p>
+      <%= simple_form_for @booking do |f| %>
+        <div class=" form-inputs d-flex justify-content-between">
+          <%= f.input :start_date, as: :string, input_html: {type: :date} %>
+          <%= f.input :end_date, as: :string, input_html: {type: :date} %>
+        </div>
+        <div class="form-actions">
+          <%= f.button :submit, "Book ta poule", class: "btn button-primary" %>
+        </div>
+      <% end %>
+      <div class="mt-5">
+        <h2>Réservations</h2>
+        <% if @chicken.bookings.empty? %>
+          <p>Pas de réservation pour le moment. Cette poule est dipo !!</p>
+        <% else %>
+          <ul>
+          <% @chicken.bookings.each do |booking| %>
+            <li>Du <%= booking.start_date %> au <%= booking.end_date %></li>
+          <% end %>
+          </ul>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+  </div>
+</div>

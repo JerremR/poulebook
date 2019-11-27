@@ -1,9 +1,12 @@
 <div class="card-chicken">
-  <%= cl_image_tag(chicken.photo)%>
+  <%= link_to chicken_path(chicken) do %>
+  <%= cl_image_tag(chicken.photo, class: 'chicken-photo')%>
+  <% end %>
   <div class="card-chicken-infos">
     <div>
       <h2><%= chicken.name %></h2>
       <p><%= chicken.address %></p>
+      <%= link_to "Book this chicken", new_chicken_booking_path(chicken), class: 'btn button-primary' %>
     </div>
     <h2 class="card-chicken-pricing"><%= chicken.price %>€/day</h2>
     <%= cl_image_tag(chicken.owner.avatar, class:"card-chicken-owner avatar-bordered", width: 40, height: 40, crop: :thumb, gravity: :face) %>
