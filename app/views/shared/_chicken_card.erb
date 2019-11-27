@@ -1,5 +1,7 @@
 <div class="card-chicken">
-  <%= cl_image_tag(chicken.photo)%>
+  <%= link_to chicken_path(chicken) do %>
+  <%= cl_image_tag(chicken.photo, class: 'chicken-photo')%>
+  <% end %>
   <div class="card-chicken-infos">
     <div>
       <h2><%= chicken.name %></h2>
