@@ -4,7 +4,7 @@ class Chicken < ApplicationRecord
 
   validates :name, presence: true
   validates :price, presence: true
-  validates :gender, inclusion: { in: ['male', 'female'] }
+  validates :gender, inclusion: { in: ['Mâle', 'Femelle'] }
 
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?

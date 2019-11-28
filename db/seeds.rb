@@ -84,7 +84,7 @@ guillaume = Chicken.new(
   name: 'Guillaume',
   color: 'Noire',
   species: 'Nantaise à rayures',
-  gender: 'male',
+  gender: 'Mâle',
   price: 3.2,
   presentation: 'Facilis cu, aperiam vel quod omnis illum laborum offici est.',
   address: 'Rue du Mottay, Sainte Luce sur Loire'
@@ -141,7 +141,7 @@ hugo = Chicken.new(
   name: 'Hugo',
   color: 'Blanche',
   species: 'Nantaise à Courtes-pattes',
-  gender: 'male',
+  gender: 'Mâle',
   price: 5.6,
   presentation: '<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod animi, dignissimos nulla sunt. Aperiam dicta cupiditate veritatis natus magni dolores in aut placeat porro doloremque dolore incidunt ad, est eaque?</div><div>Temporibus aperiam illum, deserunt rem adipisci rerum quod vel cupiditate eos quasi repellat, dicta ut ipsam voluptate nihil quas expedita iste culpa molestiae maxime cum laborum error quam obcaecati dolores?</div><div>Quia harum impedit laborum tempora necessitatibus, voluptatum labore eum nobis iste debitis expedita, deleniti alias a asperiores, nihil vero inventore! Earum, debitis voluptate neque nobis eos laudantium reprehenderit recusandae blanditiis.</div><div>Voluptates culpa quos voluptas eveniet rerum labore repellat consectetur placeat impedit itaque ea ratione, natus voluptate illo maiores nulla, odio perspiciatis blanditiis magni suscipit molestiae vero doloribus. Soluta quam, quis.</div><div>Facilis minima a rem quis, sed nostrum nobis totam cupiditate molestias optio! Deleniti illo accusamus explicabo quo laudantium optio iste doloribus asperiores cum a fugit, quam impedit perspiciatis maiores soluta?</div>.',
   address: 'La pelousière, Saint Herblain'
