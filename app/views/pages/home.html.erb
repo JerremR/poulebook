@@ -23,9 +23,8 @@
 <h2 class="h2-home-page mb-4">Poule Position 🏆</h2>
 
 <div class="container container-chicken">
-  <% last_chickens = Chicken.all %>
   <div class="row">
-    <% last_chickens.each do |chicken| %>
+    <% @top_chickens.each do |chicken| %>
      <div class="col col-md-6 col-lg-3">
       <%= render partial: 'shared/chicken_card', locals: {chicken: chicken} %>
       </div>
