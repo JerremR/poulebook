@@ -40,13 +40,12 @@ puts 'End users'
 puts '-> Start chickens'
 nicoF = Chicken.new(
     name: 'Nico F',
-    birthdate: Date.strptime("28/12/1987", "%d/%m/%Y"),
-    color: 'black',
-    species: 'Ayam Cemani',
-    gender: 'male',
+    color: 'Noire',
+    species: 'Hollandaise bouclée',
+    gender: 'Mâle',
     price: 5.5,
     presentation: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis culpa quia modi quaerat porro debitis suscipit atque aut praesentium quos nam, aperiam vel quod omnis illum laborum officia quisquam, est.',
-    address: 'Nantes'
+    address: '20 rue franklin, Nantes'
     )
 nicoF_photo_url = 'https://img.buzzarena.com/2017/02/ayam-cemani.jpg'
 nicoF.remote_photo_url = nicoF_photo_url
@@ -55,13 +54,12 @@ nicoF.save!
 
 cecile = Chicken.new(
     name: 'Cecile',
-    birthdate: Date.strptime("12/05/1989", "%d/%m/%Y"),
-    color: 'white',
+    color: 'Blanche',
     species: 'Hollandaise Huppée',
-    gender: 'female',
+    gender: 'Femelle',
     price: 6.5,
     presentation: 'Suscipit atque aut praesentium quos nam, aperiam vel quod omnis illum laborum officia quisquam, est.',
-    address: 'Amsterdam'
+    address: '30 rue Franklin, Nantes'
     )
 cecile_photo_url = 'https://poulesclub-e5b0.kxcdn.com/wp-content/uploads/2019/04/race-hollandaise-huppe.jpg'
 cecile.remote_photo_url = cecile_photo_url
@@ -70,13 +68,12 @@ cecile.save!
 
 pierre = Chicken.new(
   name: 'Pierre F',
-  birthdate: Date.strptime("15/05/1980", "%d/%m/%Y"),
-  color: 'pink',
-  species: 'Brahma',
-  gender: 'male',
+  color: 'Sans poil',
+  species: 'Nantaise à poil ras',
+  gender: 'Mâle',
   price: 4.9,
   presentation: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis cu, aperiam vel quod omnis illum laborum officia quisquam, est.',
-  address: 'Rennes'
+  address: '17 Boulevard de la fraternité, Nantes'
   )
 pierre_photo_url = 'https://s.yimg.com/tr/i/1c3a523dda264737827b07c28bae9a2f_A.jpeg'
 pierre.remote_photo_url = pierre_photo_url
@@ -85,13 +82,12 @@ pierre.save!
 
 guillaume = Chicken.new(
   name: 'Guillaume',
-  birthdate: Date.strptime("15/04/1983", "%d/%m/%Y"),
-  color: 'Gray',
-  species: 'Janzé',
+  color: 'Noire',
+  species: 'Nantaise à rayures',
   gender: 'male',
   price: 3.2,
   presentation: 'Facilis cu, aperiam vel quod omnis illum laborum offici est.',
-  address: 'Rennes'
+  address: 'Rue du Mottay, Sainte Luce sur Loire'
   )
 
 guillaume_photo_url = 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Noire_Janz%C3%A9_Bintinais.JPG/1024px-Noire_Janz%C3%A9_Bintinais.JPG'
@@ -101,13 +97,12 @@ guillaume.save!
 
 nathan = Chicken.new(
   name: 'Nathan',
-  birthdate: Date.strptime("15/09/2000", "%d/%m/%Y"),
-  color: 'Gray',
-  species: 'Poule à lunette',
-  gender: 'male',
+  color: 'Rousse',
+  species: 'Nantaise à lunette',
+  gender: 'Mâle',
   price: 8.2,
   presentation: 'Facilis cu, aperiam vel quod omnis illum laborum offici est.',
-  address: 'Perpignan'
+  address: 'Rue du générale de Gaulle, Saint Sébastien sur Loire'
   )
 nathan_photo_url = 'http://image.blingee.com/images19/content/output/000/000/000/7c8/805410520_1672801.gif'
 nathan.remote_photo_url = nathan_photo_url
@@ -116,13 +111,12 @@ nathan.save!
 
 thibault = Chicken.new(
   name: 'Thibault',
-  birthdate: Date.strptime("15/09/1985", "%d/%m/%Y"),
-  color: 'Red',
-  species: 'White-Leghorns',
-  gender: 'male',
+  color: 'Blanche',
+  species: 'Nantaise stylée',
+  gender: 'Mâle',
   price: 5.6,
   presentation: 'Facilis cu, aperiam vel quod omnis illum laborum offici est.',
-  address: 'Toulouse'
+  address: 'Tour de Bretagne, Nantes'
   )
 thibault_photo_url = 'http://knowledgebase.lookseek.com/images/animals/birds/poultry/large-poultry/White-Leghorns-Chicken.JPG'
 thibault.remote_photo_url = thibault_photo_url
@@ -131,13 +125,12 @@ thibault.save!
 
 pierreT = Chicken.new(
   name: 'Pierre T',
-  birthdate: Date.strptime("15/09/1985", "%d/%m/%Y"),
-  color: 'Red',
-  species: 'White-Leghorns',
-  gender: 'male',
+  color: 'Noire',
+  species: 'Nantaise punk',
+  gender: 'Mâle',
   price: 5.6,
   presentation: 'Facilis cu, aperiam vel quod omnis illum laborum offici est.',
-  address: 'Paris'
+  address: 'Boulevard Benoni Goullin, Nantes'
   )
 pierreT_photo_url = 'http://knowledgebase.lookseek.com/images/animals/birds/poultry/large-poultry/White-Leghorns-Chicken.JPG'
 pierreT.remote_photo_url = pierreT_photo_url
@@ -146,28 +139,26 @@ pierreT.save!
 
 hugo = Chicken.new(
   name: 'Hugo',
-  birthdate: Date.strptime("15/09/1986", "%d/%m/%Y"),
-  color: 'White',
-  species: 'Courtes-pattes',
+  color: 'Blanche',
+  species: 'Nantaise à Courtes-pattes',
   gender: 'male',
   price: 5.6,
-  presentation: 'Facilis cu, aperiam vel quod omnis illum laborum offici est.',
-  address: 'Nantes'
+  presentation: '<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod animi, dignissimos nulla sunt. Aperiam dicta cupiditate veritatis natus magni dolores in aut placeat porro doloremque dolore incidunt ad, est eaque?</div><div>Temporibus aperiam illum, deserunt rem adipisci rerum quod vel cupiditate eos quasi repellat, dicta ut ipsam voluptate nihil quas expedita iste culpa molestiae maxime cum laborum error quam obcaecati dolores?</div><div>Quia harum impedit laborum tempora necessitatibus, voluptatum labore eum nobis iste debitis expedita, deleniti alias a asperiores, nihil vero inventore! Earum, debitis voluptate neque nobis eos laudantium reprehenderit recusandae blanditiis.</div><div>Voluptates culpa quos voluptas eveniet rerum labore repellat consectetur placeat impedit itaque ea ratione, natus voluptate illo maiores nulla, odio perspiciatis blanditiis magni suscipit molestiae vero doloribus. Soluta quam, quis.</div><div>Facilis minima a rem quis, sed nostrum nobis totam cupiditate molestias optio! Deleniti illo accusamus explicabo quo laudantium optio iste doloribus asperiores cum a fugit, quam impedit perspiciatis maiores soluta?</div>.',
+  address: 'La pelousière, Saint Herblain'
   )
 hugo_photo_url = 'https://i.pinimg.com/originals/ca/81/0d/ca810d5550d09379a100e4e645826da1.jpg'
 hugo.remote_photo_url = hugo_photo_url
-hugo.owner = katarina
+hugo.owner = brandon
 hugo.save!
 
 julien = Chicken.new(
   name: 'Julien',
-  birthdate: Date.strptime("15/09/1989", "%d/%m/%Y"),
   color: 'Brown',
-  species: 'Bourbonnaise',
-  gender: 'male',
+  species: 'Jeune Nantaise',
+  gender: 'Mâle',
   price: 5.6,
   presentation: 'Facilis cu, aperiam vel quod omnis illum laborum offici est.',
-  address: 'Nantes'
+  address: 'Boulevard Jean Moulin, Nantes'
   )
 julien_photo_url = 'https://www.papercards.com/images/avanti/AV-202346-hen-wears-swimsuit-gift-enclosure-card.jpg'
 julien.remote_photo_url = julien_photo_url
@@ -177,10 +168,9 @@ julien.save!
 
 melanie = Chicken.new(
   name: 'Mélanie',
-  birthdate: Date.strptime("15/09/1989", "%d/%m/%Y"),
-  color: 'Brown',
-  species: 'Bourbonnaise',
-  gender: 'female',
+  color: 'Rousse',
+  species: 'Nantaise à long poils',
+  gender: 'Femelle',
   price: 5.6,
   presentation: 'Facilis cu, aperiam vel quod omnis illum laborum offici est.',
   address: 'Nantes'
@@ -197,7 +187,7 @@ puts 'End chickens'
 puts '-> Start bookings'
 
 booking1 = Booking.new(
-  status: 'rejected',
+  status: 'Refusé',
   start_date: Date.strptime("28/12/2019", "%d/%m/%Y"),
   end_date: Date.strptime("01/01/2020", "%d/%m/%Y"),
   total_price: 19.6)
@@ -206,7 +196,7 @@ booking1.chicken = pierre
 booking1.save!
 
 booking2 = Booking.new(
-  status: 'pending',
+  status: 'En attente',
   start_date: Date.strptime("02/02/2020", "%d/%m/%Y"),
   end_date: Date.strptime("01/03/2020", "%d/%m/%Y"),
   total_price: 152.6)
@@ -215,7 +205,7 @@ booking2.chicken = pierre
 booking2.save!
 
 booking3 = Booking.new(
-  status: 'confirmed',
+  status: 'Confirmé',
   start_date: Date.strptime("24/12/2019", "%d/%m/%Y"),
   end_date: Date.strptime("25/12/2019", "%d/%m/%Y"),
   total_price: 45.2)
@@ -224,7 +214,7 @@ booking3.chicken = melanie
 booking3.save!
 
 booking4 = Booking.new(
-  status: 'pending',
+  status: 'En attente',
   start_date: Date.strptime("24/12/2019", "%d/%m/%Y"),
   end_date: Date.strptime("25/12/2019", "%d/%m/%Y"),
   total_price: 8.6)
@@ -233,7 +223,7 @@ booking4.chicken = thibault
 booking4.save!
 
 booking5 = Booking.new(
-  status: 'pending',
+  status: 'En attente',
   start_date: Date.strptime("24/12/2019", "%d/%m/%Y"),
   end_date: Date.strptime("25/12/2019", "%d/%m/%Y"),
   total_price: 8.6)
@@ -242,7 +232,7 @@ booking5.chicken = nicoF
 booking5.save!
 
 booking6 = Booking.new(
-  status: 'pending',
+  status: 'En attente',
   start_date: Date.strptime("24/12/2019", "%d/%m/%Y"),
   end_date: Date.strptime("25/12/2019", "%d/%m/%Y"),
   total_price: 8.6)
@@ -250,6 +240,23 @@ booking6.user = igor
 booking6.chicken = guillaume
 booking6.save!
 
+booking7 = Booking.new(
+  status: 'Confirmé',
+  start_date: Date.strptime("01/12/2019", "%d/%m/%Y"),
+  end_date: Date.strptime("10/12/2019", "%d/%m/%Y"),
+  total_price: 35.2)
+booking7.user = katarina
+booking7.chicken = hugo
+booking7.save!
+
+booking7 = Booking.new(
+  status: 'En attente',
+  start_date: Date.strptime("24/12/2019", "%d/%m/%Y"),
+  end_date: Date.strptime("25/12/2019", "%d/%m/%Y"),
+  total_price: 8.6)
+booking7.user = katarina
+booking7.chicken = julien
+booking7.save!
 
 
 puts "#{Booking.count} bookings imported."
