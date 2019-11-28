@@ -3,6 +3,9 @@ module Owner
     before_action :authenticate_user!
     def index
       @bookings = current_user.owner_bookings
+      @bookings_pending = current_user.owner_bookings.where(status: 'En attente')
+      @bookings_accepted = current_user.owner_bookings.where(status: 'Confirmé')
+      @bookings_rejected = current_user.owner_bookings.where(status: 'Refusé')
     end
 
     def accept

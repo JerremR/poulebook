@@ -1,13 +1,27 @@
 .card-product {
+  padding: 10px 30px;
+  border: 1px solid transparent;
+  border-bottom: 1px solid #eee;
+
+  &:first-child {
+    border-top: 1px solid #eee;
+  }
+
+  &:hover{
+    border:1px solid #eee;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 5px;
+  }
+}
+.card-product .card-content{
   overflow: hidden;
   height: 120px;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-  border-top-right-radius: 50px;
-  border-bottom-right-radius: 50px;
-  margin-bottom: 30px;
+
+  // border-bottom-right-radius: 50px;
+  // margin-bottom: 30px;
 }
 
 .card-product h2 {
