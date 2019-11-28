@@ -1,15 +1,32 @@
 <div class="container">
   <h1 class="h1-all">All the Chickens</h1>
-  <% if @chickens.empty? %>
-    <p>No chicken created for now</p>
-  <% else %>
   <div class="row">
     <div class="col-8">
       <div class="row">
-        <% @chickens.each do |chicken| %>
-        <div class="col col-md-4">
-          <%= render partial: 'shared/chicken_card', locals: {chicken: chicken} %>
+        <div class="index-search">
+          <%= form_tag chickens_path, method: :get do %>
+            <div class="search-form-control form-group poule-search chickens-search">
+              <%= text_field_tag :query,
+                params[:query],
+                class: "form-control string required poule-search-input",
+                id: "search_query",
+                placeholder: "Trouvez votre poule ici !"
+              %>
+              <%= submit_tag "Search", class: "btn btn-flat" do %>
+                <i class="fas fa-search"></i> Search
+              <% end %>
+            </div>
+          <% end %>
         </div>
+        <% if @chickens.empty? %>
+          <div class="text-center w-100">Sorry... No chicken created for now</div>
+          <div class="text-center mt-5 mb-5 w-100"><%= image_tag "nobookingyet.gif" %></div>
+        <% else %>
+          <% @chickens.each do |chicken| %>
+          <div class="col col-md-4">
+            <%= render partial: 'shared/chicken_card', locals: {chicken: chicken} %>
+          </div>
+          <% end %>
         <% end %>
       </div>
     </div>
@@ -27,5 +44,4 @@
       ></div>
     </div>
   </div>
-  <% end %>
 </div>

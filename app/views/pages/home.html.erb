@@ -5,12 +5,12 @@
       <span id="banner-typed-text"></span>
     </p>
     <%= form_tag chickens_path, method: :get do %>
-      <div class="search-form-control form-group homesearch">
+      <div class="search-form-control form-group poule-search home-search">
         <%= text_field_tag :query,
           params[:query],
-          class: "form-control string required homesearch-input",
+          class: "form-control string required poule-search-input",
           id: "search_query",
-          placeholder: "Trouvez votre poule ici!"
+          placeholder: "Trouvez votre poule ici !"
         %>
         <%= submit_tag "Search", class: "btn btn-flat" do %>
           <i class="fas fa-search"></i> Search
