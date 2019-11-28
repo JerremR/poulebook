@@ -1,39 +1,32 @@
-<div class="container">
-  <h1>ALL bookings</h1>
-  <% if @bookings.empty? %>
-    <p class="text-center">No booking for now.</p>
-    <p class="text-center mt-5 mb-5"><%= image_tag "nobookingyet.gif" %></p>
-  <% else %>
-    <div class="bookings">
-      <p>Her is the list of ALL <%= @bookings.count %> bookings</p>
-      <table>
-        <tr>
-          <th>chicken photo</th>
-          <th>chicken name</th>
-          <th>start_date</th>
-          <th>end_date</th>
-          <th>total_price</th>
-          <th>user avatar</th>
-          <th>user</th>
-<!--           <th>Owner name</th>
-          <th>Owner photo</th> -->
-          <th>Status</th>
-        </tr>
+<div class="container main-container">
+  <div class="container">
+    <h1>Réservations en cours</h1>
+    <% if @bookings.empty? %>
+      <p class="text-center">No booking for now.</p>
+      <p class="text-center mt-5 mb-5"><%= image_tag "nobookingyet.gif" %></p>
+    <% else %>
       <% @bookings.each do |booking| %>
-        <tr>
-          <td><%= cl_image_tag(booking.chicken.photo, width: 150) %></td>
-          <td><%= booking.chicken.name %></td>
-          <td><%= booking.start_date %></td>
-          <td><%= booking.end_date %></td>
-          <td><%= booking.total_price %></td>
-          <td><%= cl_image_tag(booking.user.avatar, width: 100, height: 100, crop: :thumb, gravity: :face) %></td>
-          <td><%= booking.user.fullname %></td>
-          <%#= booking.chicken.owner.fullname %>
-          <%#= cl_image_tag(booking.chicken.owner.avatar, width: 100, height: 100, crop: :thumb, gravity: :face) %>
-          <td>Status: <%= booking.status %></td>
-        </tr>
+      <div class="card-product">
+        <%= cl_image_tag(booking.chicken.photo, width: 150) %>
+        <div class="card-product-infos">
+          <h2>Réservé par : <%= booking.user.fullname%></h2>
+          <p>Du <%= booking.start_date.strftime("%d/%m/%Y") %> au <%= booking.end_date.strftime("%d/%m/%Y") %> inclus.</p>
+        </div>
+        <div class="container card-price">
+          <div class="price">
+            <p><%= booking.total_price %> €</p>
+          </div>
+        </div>
+        <div class="container card-status">
+          <div class="button-status">
+            <% if booking.status == 'En attente' %>
+              <%= link_to 'Accepter', accept_owner_booking_path(booking), method: :patch, class: "btn btn-validate"%>
+              <%= link_to 'Refuser', decline_owner_booking_path(booking), method: :patch, class: "btn btn-decline"%>
+            <% end %>
+          </div>
+        </div>
+      </div>
       <% end %>
-      </table>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
