@@ -102,7 +102,7 @@ nathan = Chicken.new(
   gender: 'Mâle',
   price: 8.2,
   presentation: 'Facilis cu, aperiam vel quod omnis illum laborum offici est.',
-  address: 'Rue du générale de Gaulle, Saint Sébastien sur Loire'
+  address: 'Rue du Général de Gaulle, Saint-Sébastien-sur-Loire'
   )
 nathan_photo_url = 'http://image.blingee.com/images19/content/output/000/000/000/7c8/805410520_1672801.gif'
 nathan.remote_photo_url = nathan_photo_url
@@ -143,7 +143,7 @@ hugo = Chicken.new(
   species: 'Nantaise à Courtes-pattes',
   gender: 'Mâle',
   price: 5.6,
-  presentation: '<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod animi, dignissimos nulla sunt. Aperiam dicta cupiditate veritatis natus magni dolores in aut placeat porro doloremque dolore incidunt ad, est eaque?</div><div>Temporibus aperiam illum, deserunt rem adipisci rerum quod vel cupiditate eos quasi repellat, dicta ut ipsam voluptate nihil quas expedita iste culpa molestiae maxime cum laborum error quam obcaecati dolores?</div><div>Quia harum impedit laborum tempora necessitatibus, voluptatum labore eum nobis iste debitis expedita, deleniti alias a asperiores, nihil vero inventore! Earum, debitis voluptate neque nobis eos laudantium reprehenderit recusandae blanditiis.</div><div>Voluptates culpa quos voluptas eveniet rerum labore repellat consectetur placeat impedit itaque ea ratione, natus voluptate illo maiores nulla, odio perspiciatis blanditiis magni suscipit molestiae vero doloribus. Soluta quam, quis.</div><div>Facilis minima a rem quis, sed nostrum nobis totam cupiditate molestias optio! Deleniti illo accusamus explicabo quo laudantium optio iste doloribus asperiores cum a fugit, quam impedit perspiciatis maiores soluta?</div>.',
+  presentation: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod animi, dignissimos nulla sunt. Aperiam dicta cupiditate veritatis natus magni dolores in aut placeat porro doloremque dolore incidunt ad, est eaque? Temporibus aperiam illum, deserunt rem adipisci rerum quod vel cupiditate eos quasi repellat, dicta ut ipsam voluptate nihil quas expedita iste culpa molestiae maxime cum laborum error quam obcaecati dolores? Quia harum impedit laborum tempora necessitatibus, voluptatum labore eum nobis iste debitis expedita, deleniti alias a asperiores, nihil vero inventore! Earum, debitis voluptate neque nobis eos laudantium reprehenderit recusandae blanditiis. Voluptates culpa quos voluptas eveniet rerum labore repellat consectetur placeat impedit itaque ea ratione, natus voluptate illo maiores nulla, odio perspiciatis blanditiis magni suscipit molestiae vero doloribus. Soluta quam, quis. Facilis minima a rem quis, sed nostrum nobis totam cupiditate molestias optio! Deleniti illo accusamus explicabo quo laudantium optio iste doloribus asperiores cum a fugit, quam impedit perspiciatis maiores soluta?.',
   address: 'La pelousière, Saint Herblain'
   )
 hugo_photo_url = 'https://i.pinimg.com/originals/ca/81/0d/ca810d5550d09379a100e4e645826da1.jpg'
