@@ -1,14 +1,16 @@
 <div class="container main-container all-bookings">
   <div class="container">
-    <form action="/" method="get" class="mb-5">
-      <select onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
-        <option value="/bookings" selected="selected">Réservations (comme locataire)</option>
-        <option value="/owner/bookings">Réservations (comme propriétaire)</option>
-      </select>
-    </form>
+    <div class="formfield-select">
+      <div class="switch-bookings mb-5">
+        <select onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
+          <option value="/bookings" selected="selected">Réservations (comme locataire)</option>
+          <option value="/owner/bookings">Réservations (comme propriétaire)</option>
+        </select>
+      </div>
+    </div>
 
     <% if @bookings.empty? %>
-      <p class="text-center">No booking for now.</p>
+      <p class="text-center">Rien ici... ba alors ! Aucune réservation ???.</p>
       <p class="text-center mt-5 mb-5"><%= image_tag "nobookingyet.gif" %></p>
     <% else %>
 
@@ -16,24 +18,36 @@
         <input name="tabs" type="radio" id="pending" checked="checked" class="input"/>
         <label for="pending" class="label">En attente (<%= @bookings_pending.count %>)</label>
         <div class="panel">
-          <% @bookings_pending.each do |booking| %>
-            <%= render partial: 'shared/booking_card', locals: {booking: booking} %>
+          <% if @bookings_pending.empty? %>
+            <p>Aucune réservation en attente.</p>
+          <% else %>
+            <% @bookings_pending.each do |booking| %>
+              <%= render partial: 'shared/booking_card', locals: {booking: booking, user: "client"} %>
+            <% end %>
           <% end %>
         </div>
 
         <input name="tabs" type="radio" id="accepted" class="input"/>
         <label for="accepted" class="label">Acceptées (<%= @bookings_accepted.count %>)</label>
         <div class="panel">
-          <% @bookings_accepted.each do |booking| %>
-            <%= render partial: 'shared/booking_card', locals: {booking: booking} %>
+          <% if @bookings_accepted.empty? %>
+            <p>Aucune réservation acceptées.</p>
+          <% else %>
+            <% @bookings_accepted.each do |booking| %>
+              <%= render partial: 'shared/booking_card', locals: {booking: booking, user: "client"} %>
+            <% end %>
           <% end %>
         </div>
 
         <input name="tabs" type="radio" id="rejected" class="input"/>
         <label for="rejected" class="label">Refusées (<%= @bookings_rejected.count %>)</label>
         <div class="panel">
-          <% @bookings_rejected.each do |booking| %>
-            <%= render partial: 'shared/booking_card', locals: {booking: booking} %>
+          <% if @bookings_accepted.empty? %>
+            <p>Aucune réservation refusée.</p>
+          <% else %>
+            <% @bookings_rejected.each do |booking| %>
+              <%= render partial: 'shared/booking_card', locals: {booking: booking, user: "client"} %>
+            <% end %>
           <% end %>
         </div>
       </div>

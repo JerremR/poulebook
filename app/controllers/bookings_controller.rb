@@ -23,15 +23,17 @@ class BookingsController < ApplicationController
     if chicken_available?(@chicken, @booking.start_date, @booking.end_date)
       if @booking.save
         redirect_to bookings_path
+        flash.notice = "<p class='alert alert-success'>Votre réservation a bien été enregistrée !</p>"
       else
-        render :new
+        redirect_to chicken_path(@chicken)
       end
     else
       @booking.errors.add(:chicken, 'Non dispo à ces dates. Vérifie les réservations stp !')
       @booking.errors.add(:start_date, 'Pas dispo !')
       @booking.errors.add(:end_date, 'Pas dispo !')
-      render :new
-      flash[:alert] = "#{@chicken.name} n'est pas dispo pour ces dates!"
+      redirect_to chicken_path(@chicken)
+      # flash[:alert] = "#{@chicken.name} n'est pas dispo pour ces dates!"
+      flash.notice = "<p class='alert alert-danger'>#{@chicken.name} n'est pas dispo pour ces dates!</p>"
     end
   end
 

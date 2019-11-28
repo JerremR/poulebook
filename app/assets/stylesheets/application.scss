@@ -13,3 +13,11 @@
 @import "components/index";
 @import "pages/index";
 @import "config/setup";
+
+
+// Global CSS
+
+.main-content {
+  min-height: calc(100vh - 66px - 272px);
+
+}
