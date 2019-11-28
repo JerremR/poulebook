@@ -1,0 +1,32 @@
+.row .box {
+  margin-right: 10vw;
+  margin-left: 10vw;
+}
+
+.box {
+  display: flex;
+  width: 100%;
+
+  .card {
+   }
+
+    .card-text {
+    font-size: 22px;
+  }
+
+  .one {
+    flex-grow: 1;
+  }
+}
+
+
+.two {
+}
+
+.two > img {
+  border: 3px;
+  display: block;
+  height: 300px;
+  object-fit: scale-down;
+
+}

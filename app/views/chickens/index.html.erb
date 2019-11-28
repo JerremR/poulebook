@@ -3,28 +3,25 @@
   <% if @chickens.empty? %>
     <p>No chicken created for now</p>
   <% else %>
-    <div class="row">
-    <% @chickens.each do |chicken| %>
-      <div class="col col-md-4">
-        <h2><%= link_to chicken.name, chicken_path(chicken) %></h2>
-        <p>BirthDate: <%= chicken.birthdate %></p>
-        <p>Color: <%= chicken.color %></p>
-        <p>Species: <%= chicken.species %></p>
-        <p>Gender: <%= chicken.gender %></p>
-        <p>Price: <%= chicken.price %> € per day</p>
-        <p>Photo: <%= cl_image_tag(chicken.photo, width:'100%') %></p>
-        <p>Presentation: <%= chicken.presentation %></p>
-        <p>Address: <%= chicken.address %></p>
-        <div class="row">
-          <div class="col-3">
-            <%= cl_image_tag(chicken.owner.avatar, width: 50, height: 50, crop: :fill, class:'image') %>
-          </div>
-          <div class="col-9">
-            Owner: <%= chicken.owner.fullname %></p>
-          </div>
+  <div class="row">
+    <div class="col-8">
+      <div class="row">
+        <% @chickens.each do |chicken| %>
+        <div class="col col-md-4">
+          <%= render partial: 'shared/chicken_card', locals: {chicken: chicken} %>
         </div>
+        <% end %>
       </div>
-    <% end %>
     </div>
+    <div class="col-4">
+      <div
+        id="map"
+        style="width: 100%;
+        height: 600px;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+      ></div>
+    </div>
+  </div>
   <% end %>
 </div>

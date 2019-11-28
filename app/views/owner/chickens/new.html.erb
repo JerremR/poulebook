@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col col-md-6">
+      <h1 class="text-center mb-5">Elle est comment ta poule&nbsp? Dis-nous tout !</h1>
+      <%= simple_form_for(@chicken, as: :chicken, method: :post, url: owner_chickens_path) do |f| %>
+        <div class=" form-inputs">
+          <%= f.input :name %>
+          <%= f.input :color %>
+          <%= f.input :species %>
+          <%= f.input :gender, collection: ['male', 'female'] %>
+          <%= f.input :price %>
+          <%= f.input :birthdate %>
+          <%= f.input :photo %>
+          <%= f.input :photo_cache, as: :hidden %>
+          <%= f.input :presentation, as: :text %>
+          <%= f.input :address %>
+        </div>
+        <div class="form-actions">
+          <%= f.button :submit, "Vas-y... balance ta poule", class: "btn button-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

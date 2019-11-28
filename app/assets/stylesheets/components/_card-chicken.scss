@@ -1,19 +1,13 @@
-.container-chicken {
-  display:flex;
-  justify-content: space-evenly;
-}
-
 .card-chicken {
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   max-width: 100%;
-  margin: 10px;
+  margin: 5px;
   margin-top: 20px;
-  width: 100%;
 }
 
-.card-chicken > img {
+.card-chicken img.chicken-photo {
   height: 200px;
   width: 100%;
   object-fit: cover;

@@ -132,7 +132,7 @@ pierreT = Chicken.new(
   presentation: 'Facilis cu, aperiam vel quod omnis illum laborum offici est.',
   address: 'Boulevard Benoni Goullin, Nantes'
   )
-pierreT_photo_url = 'http://knowledgebase.lookseek.com/images/animals/birds/poultry/large-poultry/White-Leghorns-Chicken.JPG'
+pierreT_photo_url = 'https://i.servimg.com/u/f46/11/46/89/73/pict0310.jpg'
 pierreT.remote_photo_url = pierreT_photo_url
 pierreT.owner = katarina
 pierreT.save!
@@ -249,14 +249,14 @@ booking7.user = katarina
 booking7.chicken = hugo
 booking7.save!
 
-booking7 = Booking.new(
+booking8 = Booking.new(
   status: 'En attente',
   start_date: Date.strptime("24/12/2019", "%d/%m/%Y"),
   end_date: Date.strptime("25/12/2019", "%d/%m/%Y"),
   total_price: 8.6)
-booking7.user = katarina
-booking7.chicken = julien
-booking7.save!
+booking8.user = katarina
+booking8.chicken = julien
+booking8.save!
 
 
 puts "#{Booking.count} bookings imported."

@@ -1,19 +1,17 @@
-<div class="container">
-  <h1><%= @chicken.name %></h1>
-  <p>BirthDate: <%= @chicken.birthdate %></p>
-  <p>Color: <%= @chicken.color %></p>
-  <p>Species: <%= @chicken.species %></p>
-  <p>Gender: <%= @chicken.gender %></p>
-  <p>Price: <%= @chicken.price %> € per day</p>
-  <p>Photo: <%= cl_image_tag(@chicken.photo) %></p>
-  <p>Presentation: <%= @chicken.presentation %></p>
-  <p>Address: <%= @chicken.address %></p>
-  <div class="row">
-    <div class="col-3">
-      <%= cl_image_tag(@chicken.owner.avatar, width: 50, height: 50, crop: :fill, class:'image') %>
-    </div>
-    <div class="col-9">
-      Owner: <%= @chicken.owner.fullname %></p>
+<div class="row">
+<div class="box">
+  <div class="one">
+    <div class="card">
+      <h1 class="card-header"><%= @chicken.name %> - <%= @chicken.species %></h1>
+        <div class="card-body">
+          <h2 class="card-title">Couleur: <%= @chicken.color %></h2>
+          <p class="card-text"><%= @chicken.presentation %></p>
+          <span><%= link_to "Réserve ta poule", new_chicken_booking_path(@chicken), class: "btn button-primary" %></span>
+        </div>
     </div>
   </div>
+  <div class="two">
+    <%= cl_image_tag(@chicken.photo) %>
+  </div>
+</div>
 </div>

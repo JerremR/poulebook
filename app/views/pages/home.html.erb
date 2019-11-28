@@ -1,8 +1,10 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1522243415254-248420bef151?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80);">
   <div class="container">
     <h1>Poulebook</h1>
-    <p>Réservez des poules pour vos activités uniques 😘</p>
-    <%= simple_form_for :search, url: root_path, method: :get do |f| %>
+    <p>
+      <span id="banner-typed-text"></span>
+    </p>
+    <%= simple_form_for :search, url: chickens_path, method: :get do |f| %>
       <div class="search-form-control form-group homesearch">
         <input class="form-control string required homesearch-input" type="text" placeholder="Trouvez votre poule ici!" name="search[query]" id="search_query" />
         <button name="button" type="submit" class="btn btn-flat">
@@ -17,18 +19,8 @@
   <% last_chickens = Chicken.all %>
   <div class="row">
     <% last_chickens.each do |chicken| %>
-      <div class="card-chicken col-3 nopadding">
-        <%= cl_image_tag(chicken.photo)%>
-        <!-- <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" /> -->
-        <div class="card-chicken-infos">
-          <div>
-            <h2><%= chicken.name %></h2>
-            <p><%= chicken.address %></p>
-          </div>
-          <h2 class="card-chicken-pricing"><%= chicken.price %>€/day</h2>
-          <%= cl_image_tag(chicken.owner.avatar, class:"card-chicken-owner avatar-bordered", width: 40, height: 40, crop: :thumb, gravity: :face) %>
-          <!-- <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-chicken-owner avatar-bordered" /> -->
-        </div>
+     <div class="col col-md-6 col-lg-3">
+      <%= render partial: 'shared/chicken_card', locals: {chicken: chicken} %>
       </div>
     <% end %>
   </div>
