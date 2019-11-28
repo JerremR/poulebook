@@ -1,32 +1,36 @@
-.row .box {
-  margin-right: 10vw;
-  margin-left: 10vw;
+.main-container {
+display: flex;
+justify-content: space-evenly;
 }
 
-.box {
+.img {
+height: 200px;
+}
+
+.photo {
+  flex: 0 0 30%;
+}
+
+.main-description-container {
+  justify-content: space-evenly;
+}
+
+.description-container {
   display: flex;
-  width: 100%;
-
-  .card {
-   }
-
-    .card-text {
-    font-size: 22px;
-  }
-
-  .one {
-    flex-grow: 1;
-  }
+  justify-content: space-between;
 }
 
-
-.two {
+.booking-container {
+  width: 30vw;
 }
 
-.two > img {
-  border: 3px;
-  display: block;
-  height: 300px;
-  object-fit: scale-down;
-
+.presentation-container {
+  display: flex;
+  justify-content: space-between;
 }
+
+.carac {
+  flex: 0 0 70%;
+  padding-left: 12px;
+}
+
