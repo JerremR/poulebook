@@ -5,8 +5,8 @@
       <%= simple_form_for(@chicken, as: :chicken, method: :post, url: owner_chickens_path) do |f| %>
         <div class=" form-inputs">
           <%= f.input :name %>
-          <%= f.input :color %>
-          <%= f.input :species %>
+          <%= f.input :color, collection: ['Blanche', 'Rousse', 'Noire', 'Sans poil'] %>
+          <%= f.input :species, collection: ['Nantaise', 'Hollandaise'] %>
           <%= f.input :gender, collection: ['male', 'female'] %>
           <%= f.input :price %>
           <%= f.input :photo %>
