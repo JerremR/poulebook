@@ -17,11 +17,11 @@
         <input name="tabs" type="radio" id="pending" checked="checked" class="input"/>
         <label for="pending" class="label">En attente (<%= @bookings_pending.count %>)</label>
         <div class="panel">
-          <% if @booking_pending.empty? %>
+          <% if @bookings_pending.empty? %>
             <p>Aucune réservation en attente.</p>
           <% else %>
             <% @bookings_pending.each do |booking| %>
-              <%= render partial: 'shared/booking_owner_card', locals: {booking: booking} %>
+              <%= render partial: 'shared/booking_card', locals: {booking: booking, user: "owner"} %>
             <% end %>
           <% end %>
         </div>
@@ -33,7 +33,7 @@
             <p>Aucune réservation acceptée.</p>
           <% else %>
             <% @bookings_accepted.each do |booking| %>
-              <%= render partial: 'shared/booking_owner_card', locals: {booking: booking} %>
+              <%= render partial: 'shared/booking_card', locals: {booking: booking, user: "owner"} %>
             <% end %>
           <% end %>
         </div>
@@ -45,7 +45,7 @@
             <p>Aucune réservation refusée.</p>
           <% else %>
             <% @bookings_rejected.each do |booking| %>
-              <%= render partial: 'shared/booking_owner_card', locals: {booking: booking} %>
+              <%= render partial: 'shared/booking_card', locals: {booking: booking, user: "owner"} %>
             <% end %>
           <% end %>
         </div>
