@@ -1,32 +1,42 @@
-<div class="container main-container">
+<div class="container main-container all-bookings">
   <div class="container">
-    <h1>Réservations en cours</h1>
+    <form action="/" method="get" class="mb-5">
+      <select onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
+        <option value="/bookings">Réservations (comme locataire)</option>
+        <option value="/owner/bookings" selected="selected">Réservations (comme propriétaire)</option>
+      </select>
+    </form>
+
     <% if @bookings.empty? %>
       <p class="text-center">No booking for now.</p>
       <p class="text-center mt-5 mb-5"><%= image_tag "nobookingyet.gif" %></p>
     <% else %>
-      <% @bookings.each do |booking| %>
-      <div class="card-product">
-        <%= cl_image_tag(booking.chicken.photo, width: 150) %>
-        <div class="card-product-infos">
-          <h2>Réservé par : <%= booking.user.fullname%></h2>
-          <p>Du <%= booking.start_date.strftime("%d/%m/%Y") %> au <%= booking.end_date.strftime("%d/%m/%Y") %> inclus.</p>
+
+      <div class="tabs">
+        <input name="tabs" type="radio" id="pending" checked="checked" class="input"/>
+        <label for="pending" class="label">En attente (<%= @bookings_pending.count %>)</label>
+        <div class="panel">
+          <% @bookings_pending.each do |booking| %>
+            <%= render partial: 'shared/booking_owner_card', locals: {booking: booking} %>
+          <% end %>
         </div>
-        <div class="container card-price">
-          <div class="price">
-            <p><%= booking.total_price %> €</p>
-          </div>
+
+        <input name="tabs" type="radio" id="accepted" class="input"/>
+        <label for="accepted" class="label">Acceptées (<%= @bookings_accepted.count %>)</label>
+        <div class="panel">
+          <% @bookings_accepted.each do |booking| %>
+            <%= render partial: 'shared/booking_owner_card', locals: {booking: booking} %>
+          <% end %>
         </div>
-        <div class="container card-status">
-          <div class="button-status">
-            <% if booking.status == 'En attente' %>
-              <%= link_to 'Accepter', accept_owner_booking_path(booking), method: :patch, class: "btn btn-validate"%>
-              <%= link_to 'Refuser', decline_owner_booking_path(booking), method: :patch, class: "btn btn-decline"%>
-            <% end %>
-          </div>
+
+        <input name="tabs" type="radio" id="rejected" class="input"/>
+        <label for="rejected" class="label">Refusées (<%= @bookings_rejected.count %>)</label>
+        <div class="panel">
+          <% @bookings_rejected.each do |booking| %>
+            <%= render partial: 'shared/booking_owner_card', locals: {booking: booking} %>
+          <% end %>
         </div>
       </div>
-      <% end %>
     <% end %>
   </div>
 </div>

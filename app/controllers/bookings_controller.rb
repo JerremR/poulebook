@@ -2,6 +2,9 @@ class BookingsController < ApplicationController
   before_action :authenticate_user!
   def index
     @bookings = Booking.order(id: :desc).where(user: current_user)
+    @bookings_pending = Booking.order(id: :desc).where(user: current_user).where(status: 'En attente')
+    @bookings_accepted = Booking.order(id: :desc).where(user: current_user).where(status: 'Confirmé')
+    @bookings_rejected = Booking.order(id: :desc).where(user: current_user).where(status: 'Refusé')
   end
 
   def new
