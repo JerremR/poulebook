@@ -26,7 +26,7 @@ katarina.remote_avatar_url = url_katarina
 katarina.save!
 
 brandon = User.new(
-  fullname: 'Brandon - Eleveur BG du 44',
+  fullname: 'Brandon',
   email: 'brandon@example.com',
   password: 'password')
 url_brandon = 'http://www.le-chapon-fin.fr/images/eleveur-poule_1.jpg'
