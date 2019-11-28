@@ -1,17 +1,46 @@
-<div class="row">
-<div class="box">
-  <div class="one">
-    <div class="card">
-      <h1 class="card-header"><%= @chicken.name %> - <%= @chicken.species %></h1>
-        <div class="card-body">
-          <h2 class="card-title">Couleur: <%= @chicken.color %></h2>
-          <p class="card-text"><%= @chicken.presentation %></p>
-          <span><%= link_to "Réserve ta poule", new_chicken_booking_path(@chicken), class: "btn button-primary" %></span>
-        </div>
+<div class="container main-container">
+  <div class="container main-description-container">
+    <div class="container description-container">
+      <div class="photo">
+        <%= cl_image_tag(@chicken.photo, class: 'img') %>
+      </div>
+      <div class="carac">
+        <p><%= @chicken.price %>€/day</p>
+        <p><%= @chicken.color %></p>
+        <p><%= @chicken.species %></p>
+        <p><%= @chicken.address %></p>
+      </div>
+    </div>
+    <div class="container presentation-container">
+        <p><%= @chicken.presentation %></p>
     </div>
   </div>
-  <div class="two">
-    <%= cl_image_tag(@chicken.photo) %>
+  <div class="container booking-container">
+    <div class="booking-validation">
+      <%= simple_form_for(@booking, as: :booking, method: :post, url: chicken_bookings_path(@chicken)) do |f| %>
+        <% if @booking.errors.any? %>
+          <p class="text-danger"><%= @booking.errors[:chicken].first  %></p>
+        <% end %>
+        <div class=" form-inputs d-flex justify-content-between">
+          <%= f.input :start_date, required: true, as: :string, input_html: {type: :date} %>
+          <%= f.input :end_date, required: true, as: :string, input_html: {type: :date} %>
+        </div>
+        <div class="form-actions">
+          <%= f.button :submit, "Book ta poule", class: "btn button-primary" %>
+        </div>
+      <% end %>
+      <div class="mt-5">
+        <h2>Réservations</h2>
+        <% if @chicken.bookings.empty? %>
+          <p>Pas de réservation pour le moment. Cette poule est dipo !!</p>
+        <% else %>
+          <ul>
+          <% @chicken.bookings.each do |booking| %>
+            <li>Du <%= booking.start_date %> au <%= booking.end_date %></li>
+          <% end %>
+          </ul>
+        <% end %>
+      </div>
+    </div>
   </div>
-</div>
 </div>
