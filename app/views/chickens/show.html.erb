@@ -36,7 +36,7 @@
         <% else %>
           <ul>
           <% @chicken.bookings.each do |booking| %>
-            <li>Du <%= booking.start_date %> au <%= booking.end_date %></li>
+            <li>Du <%= booking.start_date.strftime("%d/%m/%Y") %> au <%= booking.end_date.strftime("%d/%m/%Y") %></li>
           <% end %>
           </ul>
         <% end %>
