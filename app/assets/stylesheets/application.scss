@@ -13,4 +13,11 @@
 @import "components/index";
 @import "pages/index";
 @import "config/setup";
-@import "pages/all-my-bookings";
+
+
+// Global CSS
+
+.main-content {
+  min-height: calc(100vh - 66px - 272px);
+
+}

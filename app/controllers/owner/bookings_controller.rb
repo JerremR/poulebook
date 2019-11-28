@@ -10,10 +10,12 @@ module Owner
 
     def accept
       change_status_to('Confirmé')
+      flash.notice = "<p class='alert alert-success'> <strong>Super !</strong> Votre réservation est bien confirmée.</p>"
     end
 
     def decline
       change_status_to('Refusé')
+      flash.notice = "<p class='alert alert-success'>Votre réservation a bien été annulée.</p>"
     end
 
     private
