@@ -162,7 +162,7 @@ julien = Chicken.new(
   )
 julien_photo_url = 'https://www.papercards.com/images/avanti/AV-202346-hen-wears-swimsuit-gift-enclosure-card.jpg'
 julien.remote_photo_url = julien_photo_url
-julien.owner = katarina
+julien.owner = brandon
 julien.save!
 
 
