@@ -10,27 +10,12 @@ module Owner
 
     def accept
       change_status_to('Confirmé')
+      flash.notice = "<p class='alert alert-success'> <strong>Super !</strong> Votre réservation est bien confirmée.</p>"
     end
 
     def decline
       change_status_to('Refusé')
-    end
-
-    private
-
-    def change_status_to(string)
-      @booking = Booking.find(params[:id])
-      @booking.status = string
-      @booking.save
-      redirect_to owner_bookings_path
-    end
-
-    def accept
-      change_status_to('Confirmé')
-    end
-
-    def decline
-      change_status_to('Refusé')
+      flash.notice = "<p class='alert alert-success'>Votre réservation a bien été annulée.</p>"
     end
 
     private

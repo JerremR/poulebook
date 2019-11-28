@@ -13,8 +13,11 @@
   </head>
   <body>
     <%= render 'shared/navbar' %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <div class="container text-center">
+      <%= flash[:success].html_safe unless flash[:success].blank? %>
+      <%= flash[:notice].html_safe unless flash[:notice].blank? %>
+      <%= flash[:alert].html_safe unless flash[:alert].blank? %>
+    </div>
     <%= yield %>
     <%= render 'shared/footer' %>
     <%= javascript_include_tag 'application' %>
