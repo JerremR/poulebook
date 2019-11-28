@@ -3,19 +3,16 @@ class ChickensController < ApplicationController
     #Added the following for the search bar
     if params[:query].present?
       sql_query = "species ILIKE :query OR address ILIKE :query"
-      @chickens = Chicken.where(sql_query, query: "%#{params[:query]}%")
+      @chickens = Chicken.geocoded.where(sql_query, query: "%#{params[:query]}%")
     else
-      @chickens = Chicken.all
+      @chickens = Chicken.geocoded
     end
 
-    @geocoded_chickens = Chicken.geocoded
-
-    @markers = @geocoded_chickens.map do |chicken|
+    @markers = @chickens.map do |chicken|
       {
         lat: chicken.latitude,
         lng: chicken.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { chicken: chicken }),
-        image_url: helpers.asset_url('logo.png')
+        infoWindow: render_to_string(partial: "info_window", locals: { chicken: chicken })
       }
     end
   end
