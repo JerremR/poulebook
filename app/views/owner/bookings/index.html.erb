@@ -1,6 +1,12 @@
-<div class="container main-container">
+<div class="container main-container all-bookings">
   <div class="container">
-    <h1 class="mb-5">Réservations (comme propriétaire)</h1>
+    <form action="/" method="get" class="mb-5">
+      <select onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
+        <option value="/bookings">Réservations (comme locataire)</option>
+        <option value="/owner/bookings" selected="selected">Réservations (comme propriétaire)</option>
+      </select>
+    </form>
+
     <% if @bookings.empty? %>
       <p class="text-center">No booking for now.</p>
       <p class="text-center mt-5 mb-5"><%= image_tag "nobookingyet.gif" %></p>
@@ -11,7 +17,7 @@
         <label for="pending" class="label">En attente (<%= @bookings_pending.count %>)</label>
         <div class="panel">
           <% @bookings_pending.each do |booking| %>
-            <%= render partial: 'shared/booking_card', locals: {booking: booking} %>
+            <%= render partial: 'shared/booking_owner_card', locals: {booking: booking} %>
           <% end %>
         </div>
 
@@ -19,7 +25,7 @@
         <label for="accepted" class="label">Acceptées (<%= @bookings_accepted.count %>)</label>
         <div class="panel">
           <% @bookings_accepted.each do |booking| %>
-            <%= render partial: 'shared/booking_card', locals: {booking: booking} %>
+            <%= render partial: 'shared/booking_owner_card', locals: {booking: booking} %>
           <% end %>
         </div>
 
@@ -27,7 +33,7 @@
         <label for="rejected" class="label">Refusées (<%= @bookings_rejected.count %>)</label>
         <div class="panel">
           <% @bookings_rejected.each do |booking| %>
-            <%= render partial: 'shared/booking_card', locals: {booking: booking} %>
+            <%= render partial: 'shared/booking_owner_card', locals: {booking: booking} %>
           <% end %>
         </div>
       </div>

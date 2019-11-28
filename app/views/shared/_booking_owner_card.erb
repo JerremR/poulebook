@@ -3,7 +3,7 @@
     <div><%= cl_image_tag(booking.chicken.photo, width: 150) %></div>
     <div class="card-product-infos">
       <h2><%= booking.chicken.name%></h2>
-      <p>Réservé chez : <%= booking.chicken.owner.fullname%></p>
+      <p>Réservé par : <%= booking.user.fullname%></p>
       <p>Du <%= booking.start_date.strftime("%d/%m/%Y") %> au <%= booking.end_date.strftime("%d/%m/%Y") %> inclus.</p>
     </div>
     <div class="container card-price">
@@ -14,7 +14,8 @@
     <div class="container card-status">
       <div class="button-status">
         <% if booking.status == 'En attente' %>
-          <span>En attente</span>
+          <%= link_to 'Accepter', accept_owner_booking_path(booking), method: :patch, class: "btn btn-validate"%>
+          <%= link_to 'Refuser', decline_owner_booking_path(booking), method: :patch, class: "btn btn-decline"%>
         <% elsif booking.status == 'Confirmé' %>
           <span class="text-success">Confirmé</span>
         <% else %>
