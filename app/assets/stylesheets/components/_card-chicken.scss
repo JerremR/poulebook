@@ -1,43 +1,69 @@
 .card-chicken {
   overflow: hidden;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
   max-width: 100%;
   margin: 5px;
   margin-top: 0px;
   margin-bottom: 30px;
-}
-
-.card-chicken img.chicken-photo {
-  height: 200px;
-  width: 100%;
-  object-fit: cover;
-}
-
-.card-chicken h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-}
-
-.card-chicken p {
-  font-size: 12px;
-  opacity: .7;
-  margin: 0;
-}
-
-
-.card-chicken .card-chicken-infos {
-  padding: 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+  top: 0px;
   position: relative;
-}
+  border: 1px solid rgba(0,0,0,0.1);
 
-.card-chicken-infos .card-chicken-owner {
-  position: absolute;
-  right: 16px;
-  top: -20px;
-  width: 40px;
+  img.chicken-photo {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  p {
+    font-size: 12px;
+    opacity: .7;
+    margin: 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &:hover {
+    transition: all 0.2s ease-out;
+    box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
+    top: -4px;
+    border: 1px solid rgba(0,0,0,0.2);
+  }
+
+  .card-species {
+    min-height: 40px;
+  }
+  .card-chicken-infos {
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: relative;
+
+    .card-chicken-owner {
+      position: absolute;
+      right: 16px;
+      top: -20px;
+      width: 40px;
+    }
+  }
+  .card-chicken-pricing {
+    background-color: $light-gray;
+    font-weight: 400;
+    display:block;
+    text-align:center;
+    vertical-align:middle;
+    border-radius: 5px;
+    padding: 2px 10px;
+  }
 }
