@@ -20,5 +20,8 @@ class ChickensController < ApplicationController
 
   def show
     @chicken = Chicken.find(params[:id])
+    @booking = Booking.new
+    # @booking.chicken = @chicken
+    # @booking.user = current_user
   end
 end
