@@ -9,7 +9,7 @@
   <% else %>
     <div class="row">
     <% @chickens.each do |chicken| %>
-      <div class="col col-md-4">
+      <div class="col col-md-3">
         <%= render partial: 'shared/chicken_card', locals: {chicken: chicken} %>
       </div>
     <% end %>
