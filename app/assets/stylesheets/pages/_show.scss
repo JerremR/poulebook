@@ -49,23 +49,27 @@ justify-content: space-evenly;
   padding-top: 15px;
   text-align: justify;
   font-size: 18px;
+  font-color: rgba(25, 25, 25, 0.9);
 }
 
 .carac {
   flex: 0 0 70%;
   padding-left: 12px;
   font-size: 20px;
+  font-color: rgba(25, 25, 25, 0.9);
 }
 
 #price {
   font-weight: bold;
   font-size: 22px;
   text-align: center;
+  font-color: rgba(25, 25, 25, 0.9);
 }
 
 #name {
  font-weight: bold;
   font-size: 32px;
+  font-color: rgba(25, 25, 25, 0.9);
 }
 
 .photokfc {
@@ -82,4 +86,12 @@ justify-content: space-evenly;
 
 .booking-validation {
   padding-top: 120px;
+}
+
+.button-primary {
+  background-color: rgba(25, 25, 25, 0.9);
+}
+
+.button-primary:hover {
+  background-color: #63E1A8;
 }
