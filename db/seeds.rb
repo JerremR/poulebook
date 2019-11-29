@@ -61,7 +61,7 @@ cecile = Chicken.new(
     gender: 'Femelle',
     price: 6.5,
     presentation: 'Suscipit atque aut praesentium quos nam, aperiam vel quod omnis illum laborum officia quisquam, est.',
-    address: '30 rue Franklin, Saint Herblain'
+    address: '30 Rue Benjamin Franklin, 44800 Saint-Herblain'
     )
 cecile_photo_url = 'https://poulesclub-e5b0.kxcdn.com/wp-content/uploads/2019/04/race-hollandaise-huppe.jpg'
 cecile.remote_photo_url = cecile_photo_url
