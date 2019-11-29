@@ -5,7 +5,7 @@
         <%= cl_image_tag(@chicken.photo, class: 'img') %>
       </div>
       <div class="carac">
-        <p id="chicken-price" data-price="<%= @chicken.price %>"><%= @chicken.price %>€/day</p>
+        <p ><%= @chicken.price %>€/day</p>
         <p><i class="fas fa-paint-brush"> <%= @chicken.color %></i></p>
         <p><%= @chicken.species %></p>
         <p><%= @chicken.address %></p>
@@ -18,7 +18,6 @@
   <div class="container booking-container">
     <div class="booking-validation">
       <%= simple_form_for(@booking, as: :booking, method: :post, url: chicken_bookings_path(@chicken)) do |f| %>
-        <p id="js-error"></p>
         <% if @booking.errors.any? %>
           <p class="text-danger"><%= @booking.errors[:chicken].first  %></p>
         <% end %>
@@ -26,8 +25,8 @@
           <%= f.input :start_date, required: true, as: :string, input_html: {type: :date} %>
           <%= f.input :end_date, required: true, as: :string, input_html: {type: :date} %>
         </div>
-        <div class="form-actions" id="book-chicken">
-          <%= f.button :submit, "Book ta poule", class: "btn button-primary", id: 'book-chicken-btn', disabled: true %>
+        <div class="form-actions">
+          <%= f.button :submit, "Book ta poule", class: "btn button-primary" %>
         </div>
       <% end %>
       <div class="mt-5">
@@ -37,7 +36,7 @@
         <% else %>
           <ul>
           <% @chicken.bookings.each do |booking| %>
-            <li>Du <%= booking.start_date.strftime("%d/%m/%Y") %> au <%= booking.end_date.strftime("%d/%m/%Y") %></li>
+            <li>Du <%= booking.start_date %> au <%= booking.end_date %></li>
           <% end %>
           </ul>
         <% end %>
