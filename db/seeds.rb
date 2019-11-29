@@ -251,11 +251,11 @@ booking5.chicken = nicoF
 booking5.save!
 
 booking6 = Booking.new(
-  status: 'En attente',
+  status: 'Confirmé',
   start_date: Date.strptime("14/12/2019", "%d/%m/%Y"),
   end_date: Date.strptime("15/12/2019", "%d/%m/%Y"),
   total_price: 8.6)
-booking6.user = igor
+booking6.user = katarina
 booking6.chicken = hugo
 booking6.save!
 
