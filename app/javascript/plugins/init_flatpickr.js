@@ -16,7 +16,7 @@ flatpickr("#booking_start_date", {
       const price = priceElement.dataset.price
       const nb_ms = selectedDates[1] - selectedDates[0];
       const nb_days = nb_ms / 86400000;
-      // newBooking.disabled = false;
+      newBooking.disabled = false;
       const totalPrice = price * nb_days;
       const totalPriceRounded = Math.round(totalPrice * 100) / 100;
       newBooking.value = "Book ta poule pour " + nb_days + " jours (" + totalPriceRounded  + '€)';
