@@ -18,10 +18,9 @@
             <%#= image_tag "https://res.cloudinary.com/dt2lwcp7z/image/upload/v1574699773/batman_fyhjqo.png", class: "",  %>
             <%= cl_image_tag(current_user.avatar, width: 40, height: 40, crop: :thumb, gravity: :face, class:'avatar dropdown-toggle', id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false) %>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <%= link_to "My bookings", bookings_path, class: "dropdown-item" %>
-              <%= link_to "My chickens", owner_chickens_path, class: "dropdown-item" %>
-              <%= link_to "My chicken bookings", owner_bookings_path, class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+              <%= link_to "Mes réservations", owner_bookings_path, class: "dropdown-item" %>
+              <%= link_to "Mon poulailler", owner_chickens_path, class: "dropdown-item" %>
+              <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
           </li>
         <% else %>
@@ -29,7 +28,7 @@
             <h2 class="nav-item">|</h2>
           </li>
           <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+            <%= link_to "Connexion", new_user_session_path, class: "nav-link" %>
           </li>
         <% end %>
       </ul>

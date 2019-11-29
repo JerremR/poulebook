@@ -1,39 +1,55 @@
-<div class="container">
-  <h1>ALL bookings</h1>
-  <% if @bookings.empty? %>
-    <p class="text-center">No booking for now.</p>
-    <p class="text-center mt-5 mb-5"><%= image_tag "nobookingyet.gif" %></p>
-  <% else %>
-    <div class="bookings">
-      <p>Her is the list of ALL <%= @bookings.count %> bookings</p>
-      <table>
-        <tr>
-          <th>chicken photo</th>
-          <th>chicken name</th>
-          <th>start_date</th>
-          <th>end_date</th>
-          <th>total_price</th>
-          <th>user avatar</th>
-          <th>user</th>
-<!--           <th>Owner name</th>
-          <th>Owner photo</th> -->
-          <th>Status</th>
-        </tr>
-      <% @bookings.each do |booking| %>
-        <tr>
-          <td><%= cl_image_tag(booking.chicken.photo, width: 150) %></td>
-          <td><%= booking.chicken.name %></td>
-          <td><%= booking.start_date %></td>
-          <td><%= booking.end_date %></td>
-          <td><%= booking.total_price %></td>
-          <td><%= cl_image_tag(booking.user.avatar, width: 100, height: 100, crop: :thumb, gravity: :face) %></td>
-          <td><%= booking.user.fullname %></td>
-          <%#= booking.chicken.owner.fullname %>
-          <%#= cl_image_tag(booking.chicken.owner.avatar, width: 100, height: 100, crop: :thumb, gravity: :face) %>
-          <td>Status: <%= booking.status %></td>
-        </tr>
-      <% end %>
-      </table>
+<div class="container main-container all-bookings">
+  <div class="container">
+    <div class="formfield-select">
+      <div class="switch-bookings mb-5">
+        <select onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
+          <option value="/bookings">Réservations (comme locataire)</option>
+          <option value="/owner/bookings" selected="selected">Réservations (comme propriétaire)</option>
+        </select>
+      </div>
     </div>
-  <% end %>
+    <% if @bookings.empty? %>
+      <p class="text-center">Désolé... personne ne veut de vos poules...</p>
+      <p class="text-center mt-5 mb-5"><%= image_tag "nobookingyet.gif" %></p>
+    <% else %>
+
+      <div class="tabs">
+        <input name="tabs" type="radio" id="pending" checked="checked" class="input"/>
+        <label for="pending" class="label">En attente <span class="bullet-notif"><%= @bookings_pending.count %></span></label>
+        <div class="panel">
+          <% if @bookings_pending.empty? %>
+            <p>Aucune réservation en attente.</p>
+          <% else %>
+            <% @bookings_pending.each do |booking| %>
+              <%= render partial: 'shared/booking_card', locals: {booking: booking, user: "owner"} %>
+            <% end %>
+          <% end %>
+        </div>
+
+        <input name="tabs" type="radio" id="accepted" class="input"/>
+        <label for="accepted" class="label">Acceptées (<%= @bookings_accepted.count %>)</label>
+        <div class="panel">
+          <% if @bookings_accepted.empty? %>
+            <p>Aucune réservation acceptée.</p>
+          <% else %>
+            <% @bookings_accepted.each do |booking| %>
+              <%= render partial: 'shared/booking_card', locals: {booking: booking, user: "owner"} %>
+            <% end %>
+          <% end %>
+        </div>
+
+        <input name="tabs" type="radio" id="rejected" class="input"/>
+        <label for="rejected" class="label">Refusées (<%= @bookings_rejected.count %>)</label>
+        <div class="panel">
+          <% if @bookings_rejected.empty? %>
+            <p>Aucune réservation refusée.</p>
+          <% else %>
+            <% @bookings_rejected.each do |booking| %>
+              <%= render partial: 'shared/booking_card', locals: {booking: booking, user: "owner"} %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
