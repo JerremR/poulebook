@@ -7,7 +7,7 @@ price = document.getElementById('chicken-price');
 start_date = document.getElementById('booking_start_date');
 end_date = document.getElementById('booking_end_date');
 
-const calculatePrice = (x) => {
+function calculatePrice(x) {
   nb_ms = end_date.valueAsDate - start_date.valueAsDate;
   // console.log(start_date.valueAsDate)
   // console.log(end_date.valueAsDate)
@@ -18,7 +18,7 @@ const calculatePrice = (x) => {
   newBooking.value = "Book ta poule pour " + nb_days + " jours (" + totalPriceRounded  + '€)';
 };
 
-const check_from_to = (x) => {
+function check_from_to(x) {
   if(end_date.valueAsDate && start_date.valueAsDate) {
     if(end_date.valueAsDate <= start_date.valueAsDate) {
       errors.innerHTML = "<span class='text-danger'>Gros nigaud ! La date de fin doit être postérieure à la date de début.</span>";
