@@ -18,6 +18,7 @@
   <div class="container booking-container">
     <div class="booking-validation">
       <%= simple_form_for(@booking, as: :booking, method: :post, url: chicken_bookings_path(@chicken)) do |f| %>
+        <p id="js-error"></p>
         <% if @booking.errors.any? %>
           <p class="text-danger"><%= @booking.errors[:chicken].first  %></p>
         <% end %>
