@@ -15,7 +15,7 @@
 
       <div class="tabs">
         <input name="tabs" type="radio" id="pending" checked="checked" class="input"/>
-        <label for="pending" class="label">En attente (<%= @bookings_pending.count %>)</label>
+        <label for="pending" class="label">En attente <span class="bullet-notif"><%= @bookings_pending.count %></span></label>
         <div class="panel">
           <% if @bookings_pending.empty? %>
             <p>Aucune réservation en attente.</p>
@@ -27,7 +27,7 @@
         </div>
 
         <input name="tabs" type="radio" id="accepted" class="input"/>
-        <label for="accepted" class="label">Acceptées (<%= @bookings_accepted.count %>)</label>
+        <label for="accepted" class="label">Acceptées <span class="bullet-notif"><%= @bookings_accepted.count %></span></label>
         <div class="panel">
           <% if @bookings_accepted.empty? %>
             <p>Aucune réservation acceptée.</p>
@@ -39,7 +39,7 @@
         </div>
 
         <input name="tabs" type="radio" id="rejected" class="input"/>
-        <label for="rejected" class="label">Refusées (<%= @bookings_rejected.count %>)</label>
+        <label for="rejected" class="label">Refusées <span class="bullet-notif"><%= @bookings_rejected.count %></span></label>
         <div class="panel">
           <% if @bookings_rejected.empty? %>
             <p>Aucune réservation refusée.</p>
