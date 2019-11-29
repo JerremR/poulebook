@@ -252,17 +252,17 @@ booking5.save!
 
 booking6 = Booking.new(
   status: 'En attente',
-  start_date: Date.strptime("24/12/2019", "%d/%m/%Y"),
-  end_date: Date.strptime("25/12/2019", "%d/%m/%Y"),
+  start_date: Date.strptime("14/12/2019", "%d/%m/%Y"),
+  end_date: Date.strptime("15/12/2019", "%d/%m/%Y"),
   total_price: 8.6)
 booking6.user = igor
-booking6.chicken = guillaume
+booking6.chicken = hugo
 booking6.save!
 
 booking7 = Booking.new(
   status: 'Confirmé',
-  start_date: Date.strptime("01/12/2019", "%d/%m/%Y"),
-  end_date: Date.strptime("10/12/2019", "%d/%m/%Y"),
+  start_date: Date.strptime("24/12/2019", "%d/%m/%Y"),
+  end_date: Date.strptime("30/12/2019", "%d/%m/%Y"),
   total_price: 35.2)
 booking7.user = katarina
 booking7.chicken = hugo

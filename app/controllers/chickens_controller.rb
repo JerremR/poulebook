@@ -21,7 +21,6 @@ class ChickensController < ApplicationController
   def show
     @chicken = Chicken.find(params[:id])
     @booking = Booking.new
-    # @booking.chicken = @chicken
-    # @booking.user = current_user
+    @bookings = @chicken.bookings.where('status=? OR status=?', 'En attente', 'Confirmé')
   end
 end
