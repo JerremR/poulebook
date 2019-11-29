@@ -1,14 +1,15 @@
 <div class="container main-container">
-  <div class="container main-description-container">
+  <div class="container main-description-container card">
     <div class="container description-container">
       <div class="img-thumbnail photo">
         <%= cl_image_tag(@chicken.photo, class: 'img') %>
       </div>
       <div class="carac">
-        <p><%= @chicken.price %>€/day</p>
-        <p><i class="fas fa-paint-brush"> <%= @chicken.color %></i></p>
-        <p><%= @chicken.species %></p>
-        <p><%= @chicken.address %></p>
+        <p id="name"><i class="fas fa-drumstick-bite"></i>  <%= @chicken.name %></p>
+        <p id="price"><%= @chicken.price %>€/day</p>
+        <p><i class="fas fa-paint-brush"></i>  <%= @chicken.color %></p>
+        <p><i class="fas fa-feather"></i>  <%= @chicken.species %></p>
+        <p><i class="fas fa-map-marked-alt"></i>  <%= @chicken.address %></p>
       </div>
     </div>
     <div class="container presentation-container">
