@@ -128,7 +128,7 @@ thibault = Chicken.new(
   presentation: 'Facilis cu, aperiam vel quod omnis illum laborum offici est.',
   address: 'Tour de Bretagne, Nantes'
   )
-thibault_photo_url = 'http://knowledgebase.lookseek.com/images/animals/birds/poultry/large-poultry/White-Leghorns-Chicken.JPG'
+thibault_photo_url = 'https://domesticanimalbreeds.com/wp-content/uploads/2018/11/leghorn-chicken-1024x586.jpg'
 thibault.remote_photo_url = thibault_photo_url
 thibault.owner = brandon
 thibault.save!
@@ -215,7 +215,7 @@ booking1.chicken = pierre
 booking1.save!
 
 booking2 = Booking.new(
-  status: 'En attente',
+  status: 'Confirmé',
   start_date: Date.strptime("02/02/2020", "%d/%m/%Y"),
   end_date: Date.strptime("01/03/2020", "%d/%m/%Y"),
   total_price: 152.6)
@@ -233,7 +233,7 @@ booking3.chicken = melanie
 booking3.save!
 
 booking4 = Booking.new(
-  status: 'En attente',
+  status: 'Confirmé',
   start_date: Date.strptime("24/12/2019", "%d/%m/%Y"),
   end_date: Date.strptime("25/12/2019", "%d/%m/%Y"),
   total_price: 8.6)
