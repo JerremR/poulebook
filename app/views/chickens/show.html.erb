@@ -31,14 +31,18 @@
       <% end %>
       <div class="mt-5">
         <h2>Réservations</h2>
-        <% if @chicken.bookings.empty? %>
+        <% if @bookings.empty? %>
           <p>Pas de réservation pour le moment. Cette poule est dipo !!</p>
         <% else %>
-          <ul>
-          <% @chicken.bookings.each do |booking| %>
-            <li>Du <%= booking.start_date %> au <%= booking.end_date %></li>
+          <!-- <ul> -->
+          <% bookings_ranges = "" %>
+          <% @bookings.each do |booking| %>
+            <% bookings_ranges += "{from:\"#{booking.start_date.strftime("%d-%m-%Y")}\",to:\"#{booking.end_date.strftime("%d-%m-%Y")}\"}," %>
           <% end %>
-          </ul>
+          <% bookings_ranges = bookings_ranges[0...-1] %>
+          <%= bookings_ranges %>
+          <meta data-bookings='<%= bookings_ranges %>'>
+          <!-- </ul> -->
         <% end %>
       </div>
     </div>

@@ -8,6 +8,11 @@ flatpickr("#booking_start_date", {
   dateFormat: "d-m-Y",
   altInput: true,
   plugins: [new rangePlugin({ input: "#booking_end_date"})],
+  minDate: "today",
+  disable: [
+    {from:"14-12-2019",to:"15-12-2019"},
+    {from:"24-12-2019",to:"30-12-2019"}
+  ],
   onChange: function (selectedDates, dateStr) {
     if (selectedDates.length == 2) {
       const newBooking = document.getElementById('book-chicken-btn');
