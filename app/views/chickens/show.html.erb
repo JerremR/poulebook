@@ -1,18 +1,23 @@
 <div class="container main-container">
-  <div class="container main-description-container">
-    <div class="container description-container">
+  <div class="main-description-container card">
+    <div class="description-container">
       <div class="img-thumbnail photo">
         <%= cl_image_tag(@chicken.photo, class: 'img') %>
       </div>
       <div class="carac">
-        <p id="chicken-price" data-price="<%= @chicken.price %>"><%= @chicken.price %>€/day</p>
-        <p><i class="fas fa-paint-brush"> <%= @chicken.color %></i></p>
-        <p><%= @chicken.species %></p>
-        <p><%= @chicken.address %></p>
+        <p id="name"><i class="fas fa-drumstick-bite"></i>  <%= @chicken.name %></p>
+        <p id="chicken-price" data-price="<%= @chicken.price %>" class="alert alert-light" role="alert"><%= @chicken.price %>0€/jour seulement!</p>
+        <p><i class="fas fa-paint-brush"></i>  <%= @chicken.color %></p>
+        <p><i class="fas fa-feather"></i>  <%= @chicken.species %></p>
+        <p><i class="fas fa-map-marked-alt"></i>  <%= @chicken.address %></p>
+
       </div>
     </div>
     <div class="container presentation-container">
-        <p><%= @chicken.presentation %></p>
+      <p>La poule Hugo est une poule de compétition. Grande folle des champs, <b>Hugo aime gambader dans la nature</b>. <span>Il aime le bon grain et l'ivresse qui l'accompagne. Toujours niché sous sa casquette, une cigarette derrière l'oreille, la plage et la forêt sont ses lieux de prédilection.</span> </p>
+      <p>Pendant votre location, il saura vous rendre de nombreux services, et animera vos <b>PoulesParty sur fond de Dub</b>(c'est en effet le petit cousin de Busta Flex).</p>
+        <p><b>Ses dernières missions?</b>  Construction de baraques en bois pour les familles les plus défavorisées de la favela de Laderas à Lima, Pérou.
+Vie avec les enfants du foyer Casa Hogar.</p>
     </div>
   </div>
   <div class="container booking-container">
@@ -21,20 +26,18 @@
         <% if @booking.errors.any? %>
           <p class="text-danger"><%= @booking.errors[:chicken].first  %></p>
         <% end %>
-        <div class=" form-inputs d-flex justify-content-between">
-          <%= f.input :start_date, required: true, as: :string, input_html: {class: "datepicker"} %>
-          <%= f.input :end_date, required: true, as: :string, input_html: {class: "datepicker"} %>
+
+        <div class=" form-inputs col-auto">
+          <%= f.input :start_date, required: true, as: :string, input_html: {class: "datepicker"}, label:"Date de début"%>
+          </div>
+          <div class=" form-inputs col-auto">
+          <%= f.input :end_date, required: true, as: :string, input_html: {class: "datepicker"}, label:"Date de fin" %>
         </div>
-        <div class="form-actions">
+        <div class="form-actions col-auto">
           <%= f.button :submit, "Book ta poule", class: "btn button-primary", id:"book-chicken-btn", disabled: true %>
         </div>
       <% end %>
-      <div class="mt-5">
-        <h2>Réservations</h2>
-        <% if @bookings.empty? %>
-          <p>Pas de réservation pour le moment. Cette poule est dipo !!</p>
-        <% else %>
-          <!-- <ul> -->
+
           <% bookings_ranges = "" %>
           <% @bookings.each do |booking| %>
             <% bookings_ranges += "{from:\"#{booking.start_date.strftime("%d-%m-%Y")}\",to:\"#{booking.end_date.strftime("%d-%m-%Y")}\"}," %>
@@ -42,9 +45,7 @@
           <% bookings_ranges = bookings_ranges[0...-1] %>
           <%= bookings_ranges %>
           <meta data-bookings='<%= bookings_ranges %>'>
-          <!-- </ul> -->
-        <% end %>
-      </div>
+         
     </div>
   </div>
 </div>

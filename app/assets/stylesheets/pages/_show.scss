@@ -1,15 +1,27 @@
+.card {
+position: left;
+padding-left: -5px;
+padding-top: 8px;
+background-color: rgba(225, 225, 225, 0.2);
+border-radius: 8px;
+padding-right: 10px;
+}
+
 .main-container {
 display: flex;
 justify-content: space-evenly;
 }
 
 .img {
-height: 200px;
+  height: 200px;
+  align-self: center;
+  height: 100%;
+  width: 100%
 }
 
 .photo {
   flex: 0 0 30%;
-  // border-style: solid;
+   // border-style: solid;
   // border-width: 3px;
   // border-color: gray;
 }
@@ -21,25 +33,65 @@ height: 200px;
 .description-container {
   display: flex;
   justify-content: space-between;
+  padding-left: 12px;
 }
 
 .booking-container {
   width: 30vw;
+  padding-top: 20px;
+  align-self: top;
+  align-content: center;
 }
 
 .presentation-container {
-  display: flex;
+  display: row;
   justify-content: space-between;
+  padding-top: 15px;
+  text-align: justify;
+  font-size: 18px;
+  font-color: rgba(25, 25, 25, 0.9);
 }
 
 .carac {
   flex: 0 0 70%;
   padding-left: 12px;
-  font-weight: bold;
-  font-size: 22px;
+  font-size: 20px;
+  font-color: rgba(25, 25, 25, 0.9);
 }
 
-#new_booking input
-{
-    font-size:14px;
+#price {
+  font-weight: bold;
+  font-size: 22px;
+  text-align: center;
+  font-color: rgba(25, 25, 25, 0.9);
+}
+
+#name {
+ font-weight: bold;
+  font-size: 32px;
+  font-color: rgba(25, 25, 25, 0.9);
+}
+
+.photokfc {
+  align-self: center;
+  height: 100%;
+  width: 100%
+}
+
+.button-primary {
+  align-self: center;
+  height: 100%;
+  width: 100%
+}
+
+.booking-validation {
+  padding-top: 120px;
+}
+
+.button-primary {
+  background-color: rgba(25, 25, 25, 0.9);
+}
+
+.button-primary:hover {
+  background-color: #63E1A8;
 }
