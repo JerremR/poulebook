@@ -51,6 +51,8 @@ nicoF_photo_url = 'https://img.buzzarena.com/2017/02/ayam-cemani.jpg'
 nicoF.remote_photo_url = nicoF_photo_url
 nicoF.owner = katarina
 nicoF.save!
+puts '---- Nico saved'
+sleep(2)
 
 cecile = Chicken.new(
     name: 'Cecile',
@@ -65,6 +67,8 @@ cecile_photo_url = 'https://poulesclub-e5b0.kxcdn.com/wp-content/uploads/2019/04
 cecile.remote_photo_url = cecile_photo_url
 cecile.owner = katarina
 cecile.save!
+puts '---- Cecile saved'
+sleep(2)
 
 pierre = Chicken.new(
   name: 'Pierre F',
@@ -79,6 +83,8 @@ pierre_photo_url = 'https://s.yimg.com/tr/i/1c3a523dda264737827b07c28bae9a2f_A.j
 pierre.remote_photo_url = pierre_photo_url
 pierre.owner = brandon
 pierre.save!
+puts '---- Pierre saved'
+sleep(2)
 
 guillaume = Chicken.new(
   name: 'Guillaume',
@@ -94,6 +100,8 @@ guillaume_photo_url = 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/73
 guillaume.remote_photo_url = guillaume_photo_url
 guillaume.owner = brandon
 guillaume.save!
+puts '---- Guillaume saved'
+sleep(2)
 
 nathan = Chicken.new(
   name: 'Nathan',
@@ -108,6 +116,8 @@ nathan_photo_url = 'http://image.blingee.com/images19/content/output/000/000/000
 nathan.remote_photo_url = nathan_photo_url
 nathan.owner = brandon
 nathan.save!
+puts '---- Nathan saved'
+sleep(2)
 
 thibault = Chicken.new(
   name: 'Thibault',
@@ -122,6 +132,8 @@ thibault_photo_url = 'http://knowledgebase.lookseek.com/images/animals/birds/pou
 thibault.remote_photo_url = thibault_photo_url
 thibault.owner = brandon
 thibault.save!
+puts '---- Thibault saved'
+sleep(2)
 
 pierreT = Chicken.new(
   name: 'Pierre T',
@@ -136,6 +148,8 @@ pierreT_photo_url = 'https://i.servimg.com/u/f46/11/46/89/73/pict0310.jpg'
 pierreT.remote_photo_url = pierreT_photo_url
 pierreT.owner = katarina
 pierreT.save!
+puts '---- Pierre T saved'
+sleep(2)
 
 hugo = Chicken.new(
   name: 'Hugo',
@@ -150,6 +164,8 @@ hugo_photo_url = 'https://i.pinimg.com/originals/ca/81/0d/ca810d5550d09379a100e4
 hugo.remote_photo_url = hugo_photo_url
 hugo.owner = brandon
 hugo.save!
+puts '---- Hugo saved'
+sleep(2)
 
 julien = Chicken.new(
   name: 'Julien',
@@ -164,6 +180,8 @@ julien_photo_url = 'https://www.papercards.com/images/avanti/AV-202346-hen-wears
 julien.remote_photo_url = julien_photo_url
 julien.owner = brandon
 julien.save!
+puts '---- Julien saved'
+sleep(2)
 
 
 melanie = Chicken.new(
@@ -179,6 +197,7 @@ melanie_photo_url = 'https://upload.wikimedia.org/wikipedia/commons/d/dd/Poule_S
 melanie.remote_photo_url = melanie_photo_url
 melanie.owner = katarina
 melanie.save!
+puts '---- Mélanie saved'
 
 
 puts "#{Chicken.count} chickens imported."
