@@ -5,7 +5,7 @@
         <%= cl_image_tag(@chicken.photo, class: 'img') %>
       </div>
       <div class="carac">
-        <p ><%= @chicken.price %>€/day</p>
+        <p id="chicken-price" data-price="<%= @chicken.price %>"><%= @chicken.price %>€/day</p>
         <p><i class="fas fa-paint-brush"> <%= @chicken.color %></i></p>
         <p><%= @chicken.species %></p>
         <p><%= @chicken.address %></p>
@@ -26,7 +26,7 @@
           <%= f.input :end_date, required: true, as: :string, input_html: {class: "datepicker"} %>
         </div>
         <div class="form-actions">
-          <%= f.button :submit, "Book ta poule", class: "btn button-primary" %>
+          <%= f.button :submit, "Book ta poule", class: "btn button-primary", id:"book-chicken-btn" %>
         </div>
       <% end %>
       <div class="mt-5">
