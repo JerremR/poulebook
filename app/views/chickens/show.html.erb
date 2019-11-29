@@ -26,6 +26,7 @@ Vie avec les enfants du foyer Casa Hogar.</p>
         <% if @booking.errors.any? %>
           <p class="text-danger"><%= @booking.errors[:chicken].first  %></p>
         <% end %>
+
         <div class=" form-inputs col-auto">
           <%= f.input :start_date, required: true, as: :string, input_html: {class: "datepicker"}, label:"Date de début"%>
           </div>
@@ -36,6 +37,15 @@ Vie avec les enfants du foyer Casa Hogar.</p>
           <%= f.button :submit, "Book ta poule", class: "btn button-primary", id:"book-chicken-btn", disabled: true %>
         </div>
       <% end %>
+
+          <% bookings_ranges = "" %>
+          <% @bookings.each do |booking| %>
+            <% bookings_ranges += "{from:\"#{booking.start_date.strftime("%d-%m-%Y")}\",to:\"#{booking.end_date.strftime("%d-%m-%Y")}\"}," %>
+          <% end %>
+          <% bookings_ranges = bookings_ranges[0...-1] %>
+          <%#= bookings_ranges %>
+          <meta data-bookings='<%= bookings_ranges %>'>
+
     </div>
     <% bookings_ranges = "" %>
     <% @bookings.each do |booking| %>
