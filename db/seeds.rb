@@ -61,7 +61,7 @@ cecile = Chicken.new(
     gender: 'Femelle',
     price: 6.5,
     presentation: 'Suscipit atque aut praesentium quos nam, aperiam vel quod omnis illum laborum officia quisquam, est.',
-    address: '30 rue Franklin, Nantes'
+    address: '30 rue Franklin, Saint Herblain'
     )
 cecile_photo_url = 'https://poulesclub-e5b0.kxcdn.com/wp-content/uploads/2019/04/race-hollandaise-huppe.jpg'
 cecile.remote_photo_url = cecile_photo_url
@@ -158,7 +158,7 @@ hugo = Chicken.new(
   gender: 'Mâle',
   price: 5.6,
   presentation: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod animi, dignissimos nulla sunt. Aperiam dicta cupiditate veritatis natus magni dolores in aut placeat porro doloremque dolore incidunt ad, est eaque? Temporibus aperiam illum, deserunt rem adipisci rerum quod vel cupiditate eos quasi repellat, dicta ut ipsam voluptate nihil quas expedita iste culpa molestiae maxime cum laborum error quam obcaecati dolores? Quia harum impedit laborum tempora necessitatibus, voluptatum labore eum nobis iste debitis expedita, deleniti alias a asperiores, nihil vero inventore! Earum, debitis voluptate neque nobis eos laudantium reprehenderit recusandae blanditiis. Voluptates culpa quos voluptas eveniet rerum labore repellat consectetur placeat impedit itaque ea ratione, natus voluptate illo maiores nulla, odio perspiciatis blanditiis magni suscipit molestiae vero doloribus. Soluta quam, quis. Facilis minima a rem quis, sed nostrum nobis totam cupiditate molestias optio! Deleniti illo accusamus explicabo quo laudantium optio iste doloribus asperiores cum a fugit, quam impedit perspiciatis maiores soluta?.',
-  address: 'La pelousière, Saint Herblain'
+  address: 'La pelousière, Nantes'
   )
 hugo_photo_url = 'https://i.pinimg.com/originals/ca/81/0d/ca810d5550d09379a100e4e645826da1.jpg'
 hugo.remote_photo_url = hugo_photo_url
