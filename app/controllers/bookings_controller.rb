@@ -16,7 +16,6 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.end_date = DateTime.parse(params[:booking][:end_date])
     @chicken = Chicken.find(params[:chicken_id])
     @booking.chicken = @chicken
     @booking.user = current_user
