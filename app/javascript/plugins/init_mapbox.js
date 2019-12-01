@@ -1,7 +1,7 @@
 import mapboxgl from 'mapbox-gl';
 
 
-  const addMarkersToMap = (map, markers) => {
+const addMarkersToMap = (map, markers) => {
   markers.forEach((marker) => {
     const popup = new mapboxgl.Popup().setHTML(marker.infoWindow); // add this
 
@@ -25,7 +25,7 @@ const fitMapToMarkers = (map, markers) => {
   map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
 };
 
-  const initMapbox = () => {
+const initMapbox = () => {
   const mapElement = document.getElementById('map');
 
   if (mapElement) {
