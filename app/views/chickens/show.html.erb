@@ -38,22 +38,14 @@ Vie avec les enfants du foyer Casa Hogar.</p>
         </div>
       <% end %>
 
-          <% bookings_ranges = "" %>
-          <% @bookings.each do |booking| %>
-            <% bookings_ranges += "{from:\"#{booking.start_date.strftime("%d-%m-%Y")}\",to:\"#{booking.end_date.strftime("%d-%m-%Y")}\"}," %>
-          <% end %>
-          <% bookings_ranges = bookings_ranges[0...-1] %>
-          <%#= bookings_ranges %>
-          <meta data-bookings='<%= bookings_ranges %>'>
-
     </div>
-    <% bookings_ranges = "" %>
+    <% bookings_ranges = "[" %>
     <% @bookings.each do |booking| %>
-      <% bookings_ranges += "{from:\"#{booking.start_date.strftime("%d-%m-%Y")}\",to:\"#{booking.end_date.strftime("%d-%m-%Y")}\"}," %>
+      <% bookings_ranges += "{\"from\":\"#{booking.start_date.strftime("%d-%m-%Y")}\",\"to\":\"#{booking.end_date.strftime("%d-%m-%Y")}\"}," %>
     <% end %>
-    <% bookings_ranges = bookings_ranges[0...-1] %>
+    <% bookings_ranges = bookings_ranges[0...-1] + "]"%>
     <%#= bookings_ranges %>
-    <meta data-bookings='<%= bookings_ranges %>'>
+    <meta id="bookings-ranges" data-bookings='<%= bookings_ranges %>'>
 
   </div>
 </div>
